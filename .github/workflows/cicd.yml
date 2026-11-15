@@ -2,7 +2,7 @@ name: Deploy Rust Application
 on:
   push:
     branches:
-        - blade-and-blood
+        - main
 
 jobs:
   build:
