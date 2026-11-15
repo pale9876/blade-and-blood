@@ -7,6 +7,6 @@ RUN cargo build --release
 #stage 2
 FROM debian:bullseye-slim
 WORKDIR /app
-COPY --from=builder /app/target/release/rust-app /app/rust-app
+COPY --from=builder /app/target/release/blade-and-blood /app/blade-and-blood
 EXPOSE 3000
-CMD [ "/app/rust-app" ]
+CMD [ "/app/blade-and-blood" ]

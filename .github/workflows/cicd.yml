@@ -26,4 +26,4 @@ jobs:
       - name: Delete old container
         run: docker rm -f blade-and-blood-container  
       - name: Run docker container
-        run: docker run -d -p 5050:5050 --name blade-and-blood-container -e MONGO_USER='${{ secrets.MONGO_USER }}' -e MONGO_PASSWORD='${{ secrets.MONGO_PASSWORD }}' -e MONGO_HOST='${{ secrets.MONGO_HOST }}' -e MONGO_DB='${{ secrets.MONGO_DB }}' aaasssss231/blade-and-blood
+        run: docker run -d -p 3000:3000 --name blade-and-blood-container -e MONGO_USER='${{ secrets.MONGO_USER }}' -e MONGO_PASSWORD='${{ secrets.MONGO_PASSWORD }}' -e MONGO_HOST='${{ secrets.MONGO_HOST }}' -e MONGO_DB='${{ secrets.MONGO_DB }}' aaasssss231/blade-and-blood
