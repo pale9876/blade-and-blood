@@ -11,6 +11,7 @@ mod models;
 mod db;
 mod handlers;
 
+
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     // Initialize logger with hardcoded default level
@@ -35,7 +36,7 @@ async fn main() -> std::io::Result<()> {
             .route("/users/{id}", web::put().to(update_user))
             .route("/users/{id}", web::delete().to(delete_user))
     })
-    .bind("0.0.0.0:5050")?
+    .bind("0.0.0.0:3000")?
     .run()
     .await
 }
