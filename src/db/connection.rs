@@ -3,13 +3,23 @@ use dotenv::dotenv;
 use std::env;
 use log::{info, error};
 
-pub async fn get_db() -> Result<Database, String> {
-    dotenv().ok(); // Load environment variables from .env file
 
-    let user = env::var("MONGO_USER").map_err(|_| "MONGO_USER not set in .env".to_string())?;
-    let password = env::var("MONGO_PASSWORD").map_err(|_| "MONGO_PASSWORD not set in .env".to_string())?;
-    let host = env::var("MONGO_HOST").map_err(|_| "MONGO_HOST not set in .env".to_string())?;
-    let db_name = env::var("MONGO_DB").map_err(|_| "MONGO_DB not set in .env".to_string())?;
+
+
+
+pub async fn get_db() -> Result<Database, String> {
+    dotenv().ok();
+
+    let user = env::var("MONGO_USER")
+        .map_err(|_| "MONGO_USER not set in .env".to_string())?;
+    let password = env::var("MONGO_PASSWORD")
+        .map_err(|_| "MONGO_PASSWORD not set in .env".to_string())?;
+    let host = env::var("MONGO_HOST")
+        .map_err(|_| "MONGO_HOST not set in .env".to_string())?;
+    let db_name = env::var("MONGO_DB")
+        .map_err(|_| "MONGO_DB not set in .env".to_string())?;
+    
+
 
     // Construct the connection string securely
     let mongo_uri = format!(

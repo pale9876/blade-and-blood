@@ -1,1 +1,1 @@
-pub mod connection; // Expose the database connection logic
+pub mod connection;

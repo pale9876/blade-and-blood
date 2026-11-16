@@ -1,1 +1,2 @@
-pub mod user; // Expose the user model
+pub mod user;
+pub mod userinfo;
