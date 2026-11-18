@@ -4,9 +4,6 @@ use std::env;
 use log::{info, error};
 
 
-
-
-
 pub async fn get_db() -> Result<Database, String> {
     dotenv().ok();
 
