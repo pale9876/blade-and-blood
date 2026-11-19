@@ -10,7 +10,10 @@ use actix_web::{
     web::{self, scope}
 };
 use mongodb::{
-    Client, Collection, Database, bson::{DateTime, doc, oid::ObjectId}, options::InsertOneOptions
+    Client,
+    Collection,
+    Database,
+    bson::{doc, oid::ObjectId}
 };
 
 use serde::{Deserialize, Serialize};
@@ -27,6 +30,7 @@ mod db;
 const PORT: u16 = 3000;
 const DB_NAME: &str = "idle_game";
 
+
 struct DBState
 {
     visitor_count: Mutex<usize>,
@@ -36,9 +40,12 @@ struct DBState
 #[get("/")]
 async fn index(
     db: web::Data<Database>,
-) -> String
+) -> impl Responder
 {
-    let _collection = db.collection
+    let _collection = db.collection::<DBState>("state");
+    
+
+    HttpResponse::Ok().body("")
 }
 
 
