@@ -1,24 +1,19 @@
 use std::sync::Mutex;
 
 use actix_web::{
-    App,
-    HttpResponse,
-    HttpServer,
-    Responder,
-    get,
-    post,
-    web::{self, scope}
+    App, HttpResponse, HttpServer, Responder,
+    http::header::ContentType,
+    web::{self, scope},
+    get, post
 };
+
 use mongodb::{
-    Client,
-    Collection,
-    Database,
-    bson::{doc, oid::ObjectId}
+    Collection, Database, bson::{self, doc, oid::ObjectId}
 };
 
 use serde::{Deserialize, Serialize};
 use crate::db::connection::get_db;
-use dyf::{dformat, FormatString};
+// use dyf::{dformat, FormatString};
 use serde_json::{self, json};
 
 use log::info;
@@ -31,23 +26,11 @@ const PORT: u16 = 3000;
 const DB_NAME: &str = "idle_game";
 
 
-struct DBState
+#[derive(Debug, Serialize, Deserialize)]
+struct State
 {
-    visitor_count: Mutex<usize>,
+    visitor_count: usize,
 }
-
-
-#[get("/")]
-async fn index(
-    db: web::Data<Database>,
-) -> impl Responder
-{
-    let _collection = db.collection::<DBState>("state");
-    
-
-    HttpResponse::Ok().body("")
-}
-
 
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -70,6 +53,13 @@ struct CreateUser {
     email: String,
     birth: String,
 }
+
+#[derive(Debug, Deserialize)]
+struct UpdateUser
+{
+
+}
+
 
 #[derive(Debug, Deserialize)]
 struct GetUserQuery
@@ -96,6 +86,24 @@ struct AppState
 }
 
 
+#[get("/")]
+async fn index(
+    state: web::Data<Collection<State>>,
+) -> impl Responder
+{
+    HttpResponse::Ok().content_type(ContentType::json()).body("Hello")
+}
+
+#[get("/blog/{uid}")]
+async fn find_user(
+    uid: web::Path<String>,
+) -> impl Responder
+{
+
+    HttpResponse::Ok()
+}
+
+
 #[post("/registry")]
 async fn registry(
     collection: web::Data<Collection<UserInfo>>,
@@ -119,20 +127,26 @@ async fn registry(
             .as_object_id()
             .unwrap_or_else(ObjectId::new);
 
-        return HttpResponse::Created().json(
-            json!({
-                "message": "Success",
-                "id": &id.to_hex()
-            })
-        );
+        return HttpResponse::Created()
+            .content_type(ContentType::json())
+            .json(
+                json!({
+                    "message": "Success",
+                    "id": &id.to_hex()
+                })
+            );
     }
 
-    HttpResponse::InternalServerError().json(
-        json!({
-            "success": false,
-            "message": "error"
-        })
-    )
+    HttpResponse::InternalServerError()
+        .content_type(ContentType::json())
+        .json(
+            json!(
+                {
+                    "success": false,
+                    "message": "error"
+                }
+            )
+        )
 }
 
 
@@ -143,6 +157,8 @@ async fn main() -> std::io::Result<()> {
         .filter_level(log::LevelFilter::Info)
         .init();
     
+    let today = bson::datetime::DateTime::now();
+
     let current_os = std::env::consts::OS;
     let post_ip = if current_os == "windows" { "127.0.0.1" } else { "0.0.0.0" };
     
@@ -150,18 +166,30 @@ async fn main() -> std::io::Result<()> {
 
     // init db
     let db = get_db().await.expect("Failed to connect to MongoDB");
-
-
+    let _state = db.create_collection("state", None).await;
+    
     // collections
+    let state_collection = web::Data::new(db.collection::<State>("state"));
     let user_collection = web::Data::new(db.collection::<UserInfo>("user"));
+
+    if let Ok(list) = db.list_collection_names(doc! {}).await
+    {
+        if let state_exist = list.contains(&String::from("state"))
+        {
+            println!("state exist = true");
+        }
+    }
+
 
     HttpServer::new(move || {
         App::new()
             .app_data(db.clone())
+            
             .app_data(user_collection.clone())
-            // 회원등록
+            .app_data(state_collection.clone())
             .service(registry)
             .service(index)
+            .service(find_user)
     })
     .bind((post_ip, PORT))? // 포트번호를 깃허브로 뺄까 싶다.
     .run()

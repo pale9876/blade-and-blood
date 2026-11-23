@@ -1,3 +1,5 @@
-/target
-.DS_Store
-.env
+/godot/project/godot_wry/rust/target
+*.obj
+*.import
+*.exp
+*.lib
