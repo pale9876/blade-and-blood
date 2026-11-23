@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://ct6cgcrqkrpna"]
+
+[ext_resource type="Script" uid="uid://bcy8rv6he6vaq" path="res://script/api_setting_panel.gd" id="1_sfua3"]
+[ext_resource type="Script" uid="uid://cesr3hp8q3ami" path="res://script/api.gd" id="2_cvmwn"]
+[ext_resource type="Script" uid="uid://c82ws3t3q27os" path="res://script/http_method_container.gd" id="3_ipxqm"]
+[ext_resource type="Script" uid="uid://lv0al8ew5s7w" path="res://method_tab.gd" id="4_7p8d7"]
+[ext_resource type="PackedScene" uid="uid://b5r8ivuvmb8nc" path="res://method_get.tscn" id="4_ipxqm"]
+[ext_resource type="PackedScene" uid="uid://cmifgnfos20ur" path="res://method_post.tscn" id="5_7p8d7"]
+[ext_resource type="PackedScene" uid="uid://c8juoqernf4r0" path="res://result_panel.tscn" id="5_csbca"]
+
+[node name="ApiControl" type="Control" unique_id=1310297167]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sfua3")
+
+[node name="API" type="HTTPRequest" parent="." unique_id=976334655]
+unique_name_in_owner = true
+script = ExtResource("2_cvmwn")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=450948347]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2096954295]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=72901295]
+layout_mode = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=253424427]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VSplitContainer" unique_id=319072272]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/VBoxContainer" unique_id=1208243819]
+layout_mode = 2
+
+[node name="Host" type="LineEdit" parent="PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/VBoxContainer/HBoxContainer" unique_id=1949139935]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Host"
+alignment = 1
+
+[node name="PortEdit" type="LineEdit" parent="PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/VBoxContainer/HBoxContainer" unique_id=554313168]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.45
+placeholder_text = "Port"
+alignment = 1
+
+[node name="Scope" type="LineEdit" parent="PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/VBoxContainer" unique_id=916346101]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Scope"
+alignment = 1
+
+[node name="Send" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/VBoxContainer" unique_id=808117753]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Send"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VSplitContainer" unique_id=708901729]
+layout_mode = 2
+
+[node name="SaveLogBtn" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VSplitContainer/VBoxContainer2" unique_id=761300210]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Save Log"
+
+[node name="HttpMethodContainer" type="TabContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1636420369]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+current_tab = 1
+tab_2/disabled = true
+tab_3/disabled = true
+script = ExtResource("3_ipxqm")
+
+[node name="Get" parent="PanelContainer/MarginContainer/HBoxContainer/HttpMethodContainer" unique_id=1476426582 instance=ExtResource("4_ipxqm")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Post" parent="PanelContainer/MarginContainer/HBoxContainer/HttpMethodContainer" unique_id=1988598495 instance=ExtResource("5_7p8d7")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Put" type="ScrollContainer" parent="PanelContainer/MarginContainer/HBoxContainer/HttpMethodContainer" unique_id=1099355808]
+visible = false
+layout_mode = 2
+script = ExtResource("4_7p8d7")
+method = 3
+metadata/_custom_type_script = "uid://lv0al8ew5s7w"
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/HttpMethodContainer/Put" unique_id=1959543149]
+layout_mode = 2
+
+[node name="Delete" type="ScrollContainer" parent="PanelContainer/MarginContainer/HBoxContainer/HttpMethodContainer" unique_id=1266453099]
+visible = false
+layout_mode = 2
+script = ExtResource("4_7p8d7")
+method = 4
+metadata/_custom_type_script = "uid://lv0al8ew5s7w"
+metadata/_tab_index = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/HttpMethodContainer/Delete" unique_id=1963465690]
+layout_mode = 2
+
+[node name="ResultPanel" parent="." unique_id=595519063 instance=ExtResource("5_csbca")]
+unique_name_in_owner = true
+initial_position = 2
+visible = false

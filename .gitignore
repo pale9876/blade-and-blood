@@ -9,3 +9,5 @@
 /godot/project/project_revenant/.godot
 *.uid
 *.uid
+/godot/client/godot_wry/rust/target
+/godot/client/rusteasylib/target

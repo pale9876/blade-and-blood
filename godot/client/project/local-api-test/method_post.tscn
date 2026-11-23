@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://cmifgnfos20ur"]
+
+[ext_resource type="Script" uid="uid://lv0al8ew5s7w" path="res://method_tab.gd" id="1_qksav"]
+[ext_resource type="Script" uid="uid://bjw3fjkkut5yt" path="res://script/post_container.gd" id="2_bqsbo"]
+[ext_resource type="PackedScene" uid="uid://b02qawo8mikdm" path="res://data_container/string_data_container.tscn" id="3_l3j0t"]
+[ext_resource type="PackedScene" uid="uid://bj5jwhuunj0iu" path="res://data_container/email_data_container.tscn" id="4_76lab"]
+[ext_resource type="PackedScene" uid="uid://f0pqlc4swg26" path="res://data_container/password_data_container.tscn" id="5_1favs"]
+[ext_resource type="PackedScene" uid="uid://bcb8xre65jej5" path="res://data_container/date_data_container.tscn" id="6_fsmug"]
+[ext_resource type="Script" uid="uid://ds8c52xu6sh56" path="res://script/add_data_popup.gd" id="7_67jfl"]
+[ext_resource type="PackedScene" uid="uid://mhmx2wc2u8it" path="res://image_data_container.tscn" id="7_bqsbo"]
+
+[node name="Post" type="ScrollContainer" unique_id=1988598495]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_qksav")
+method = 2
+metadata/_custom_type_script = "uid://lv0al8ew5s7w"
+metadata/_tab_index = 1
+
+[node name="PostContainer" type="Control" parent="." unique_id=1664992377]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_bqsbo")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PostContainer" unique_id=1363911439]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DataAttr" type="VBoxContainer" parent="PostContainer/VBoxContainer2" unique_id=692558871]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Username" parent="PostContainer/VBoxContainer2/DataAttr" unique_id=1414257639 instance=ExtResource("3_l3j0t")]
+layout_mode = 2
+
+[node name="Email" parent="PostContainer/VBoxContainer2/DataAttr" unique_id=161302786 instance=ExtResource("4_76lab")]
+layout_mode = 2
+
+[node name="Password" parent="PostContainer/VBoxContainer2/DataAttr" unique_id=1876697571 instance=ExtResource("5_1favs")]
+layout_mode = 2
+
+[node name="BirthDate" parent="PostContainer/VBoxContainer2/DataAttr" unique_id=1595254600 instance=ExtResource("6_fsmug")]
+layout_mode = 2
+
+[node name="Image" parent="PostContainer/VBoxContainer2/DataAttr" unique_id=651723456 instance=ExtResource("7_bqsbo")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PostContainer/VBoxContainer2" unique_id=2133096249]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 18
+
+[node name="AddData" type="Button" parent="PostContainer/VBoxContainer2/HBoxContainer" unique_id=869153745]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Add Data"
+
+[node name="Remove" type="Button" parent="PostContainer/VBoxContainer2/HBoxContainer" unique_id=47846718]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Remove"
+
+[node name="AddDataPopup" type="PopupPanel" parent="PostContainer" unique_id=833056179]
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(500, 200)
+script = ExtResource("7_67jfl")
+
+[node name="MarginContainer" type="MarginContainer" parent="PostContainer/AddDataPopup" unique_id=145181680]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 496.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PostContainer/AddDataPopup/MarginContainer" unique_id=1926549117]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PostContainer/AddDataPopup/MarginContainer/VBoxContainer" unique_id=602714338]
+layout_mode = 2
+alignment = 1
+
+[node name="DataTypeOption" type="OptionButton" parent="PostContainer/AddDataPopup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2069028697]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "String"
+popup/item_0/id = 0
+popup/item_1/text = "Date"
+popup/item_1/id = 1
+popup/item_2/text = "Email"
+popup/item_2/id = 2
+popup/item_3/text = "Password"
+popup/item_3/id = 3
+
+[node name="PushData" type="Button" parent="PostContainer/AddDataPopup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=389694160]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Push Data"
+
+[node name="DataRemovePopupUI" type="PopupPanel" parent="PostContainer" unique_id=1238336479]
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(500, 200)
+
+[node name="MarginContainer" type="MarginContainer" parent="PostContainer/DataRemovePopupUI" unique_id=2038908336]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 496.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dvo82bfr4kw1c"]
+
+[ext_resource type="Script" uid="uid://c40xf60q2guft" path="res://script/main_scene.gd" id="1_gyfs4"]
+[ext_resource type="PackedScene" uid="uid://ct6cgcrqkrpna" path="res://api_control.tscn" id="2_d5x1h"]
+[ext_resource type="PackedScene" uid="uid://h5ppnm34lhh1" path="res://alert_error.tscn" id="3_gyfs4"]
+[ext_resource type="Script" uid="uid://dfe0dwelu1x1g" path="res://image_importer.gd" id="4_d5x1h"]
+
+[node name="MainScene" type="Node" unique_id=426604877]
+script = ExtResource("1_gyfs4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1026840992]
+
+[node name="ApiControl" parent="CanvasLayer" unique_id=1310297167 instance=ExtResource("2_d5x1h")]
+
+[node name="AlertError" parent="CanvasLayer" unique_id=956230273 instance=ExtResource("3_gyfs4")]
+visible = false
+
+[node name="ImageImporter" type="FileDialog" parent="." unique_id=1178617478]
+oversampling_override = 1.0
+title = "Open a File"
+position = Vector2i(0, 36)
+visible = true
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.jpg", "*.png", "*.jpeg", "*.webp", "*.svg")
+favorites_enabled = false
+script = ExtResource("4_d5x1h")

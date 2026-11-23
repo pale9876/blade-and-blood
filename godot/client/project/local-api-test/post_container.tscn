@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://bqdrf1hvkrg8u"]
+
+[ext_resource type="Script" uid="uid://bjw3fjkkut5yt" path="res://script/post_container.gd" id="1_f8r28"]
+[ext_resource type="Script" uid="uid://ds8c52xu6sh56" path="res://script/add_data_popup.gd" id="7_wpuuw"]
+
+[node name="PostContainer" type="Control" unique_id=2095128299]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_f8r28")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=962064042]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2" unique_id=1001502157]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 18
+
+[node name="AddData" type="Button" parent="VBoxContainer2/HBoxContainer" unique_id=91740676]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Add Data"
+
+[node name="Remove" type="Button" parent="VBoxContainer2/HBoxContainer" unique_id=1216003586]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Remove"
+
+[node name="AddDataPopup" type="PopupPanel" parent="." unique_id=1257920571]
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(500, 200)
+script = ExtResource("7_wpuuw")
+
+[node name="MarginContainer" type="MarginContainer" parent="AddDataPopup" unique_id=328337187]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 496.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddDataPopup/MarginContainer" unique_id=257710024]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AddDataPopup/MarginContainer/VBoxContainer" unique_id=1156443120]
+layout_mode = 2
+alignment = 1
+
+[node name="DataTypeOption" type="OptionButton" parent="AddDataPopup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=127921657]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "String"
+popup/item_0/id = 0
+popup/item_1/text = "Date"
+popup/item_1/id = 1
+popup/item_2/text = "Email"
+popup/item_2/id = 2
+popup/item_3/text = "Password"
+popup/item_3/id = 3
+
+[node name="PushData" type="Button" parent="AddDataPopup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=965443316]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Push Data"
+
+[node name="DataRemovePopupUI" type="PopupPanel" parent="." unique_id=1062843563]
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(500, 200)
+
+[node name="MarginContainer" type="MarginContainer" parent="DataRemovePopupUI" unique_id=1051312645]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 496.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10

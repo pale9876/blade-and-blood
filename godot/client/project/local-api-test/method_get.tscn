@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://b5r8ivuvmb8nc"]
+
+[ext_resource type="Script" uid="uid://dx5vv3xlb3gmr" path="res://get_method_tab.gd" id="1_80m0u"]
+[ext_resource type="Script" uid="uid://jnvbdr65xhuk" path="res://push_data_panel.gd" id="2_jtv8h"]
+
+[node name="Get" type="ScrollContainer" unique_id=1476426582]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_80m0u")
+metadata/_custom_type_script = "uid://lv0al8ew5s7w"
+metadata/_tab_index = 0
+
+[node name="GetContainer" type="VBoxContainer" parent="." unique_id=1917512255]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Requests" type="VBoxContainer" parent="GetContainer" unique_id=802328627]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AddData" type="Button" parent="GetContainer" unique_id=124691288]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Add Data"
+
+[node name="PushDataPanel" type="PopupPanel" parent="." unique_id=631570482]
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(200, 100)
+script = ExtResource("2_jtv8h")
+
+[node name="MarginContainer" type="MarginContainer" parent="PushDataPanel" unique_id=1565604439]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 196.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PushDataPanel/MarginContainer" unique_id=1489172106]
+layout_mode = 2
+alignment = 1
+
+[node name="DataNameEdit" type="LineEdit" parent="PushDataPanel/MarginContainer/VBoxContainer" unique_id=842782548]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Request Data Name"
+alignment = 1
+select_all_on_focus = true
+
+[node name="PushBtn" type="Button" parent="PushDataPanel/MarginContainer/VBoxContainer" unique_id=1015461558]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Push"

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://mhmx2wc2u8it"]
+
+[ext_resource type="Script" uid="uid://c82h46ns37acs" path="res://image_data_container.gd" id="1_3o523"]
+[ext_resource type="Script" uid="uid://c35yku1uurrfq" path="res://preview.gd" id="2_f20an"]
+
+[node name="Image" type="HBoxContainer" unique_id=651723456]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+script = ExtResource("1_3o523")
+metadata/_custom_type_script = "uid://bds3pimkmfy57"
+
+[node name="DataName" type="Label" parent="." unique_id=1164083973]
+layout_mode = 2
+text = "image"
+
+[node name="VSeparator" type="VSeparator" parent="." unique_id=629402659]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="FilePath" type="Button" parent="." unique_id=305686919]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text_overrun_behavior = 3
+
+[node name="preview" type="TextureRect" parent="." unique_id=1127540505]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_f20an")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=399619249]
+layout_mode = 2
+mouse_filter = 2

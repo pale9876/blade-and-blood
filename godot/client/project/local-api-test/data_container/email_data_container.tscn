@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bj5jwhuunj0iu"]
+
+[ext_resource type="Script" uid="uid://cqfuixmihmt6e" path="res://script/email_data_container.gd" id="1_utu1h"]
+
+[node name="Email" type="HBoxContainer" unique_id=161302786]
+script = ExtResource("1_utu1h")
+metadata/_custom_type_script = "uid://bds3pimkmfy57"
+
+[node name="UserId" type="LineEdit" parent="." unique_id=1504943823]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "User Id"
+
+[node name="Label" type="Label" parent="." unique_id=2119297107]
+layout_mode = 2
+text = "@"
+
+[node name="Domain" type="LineEdit" parent="." unique_id=1263505360]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "domain.com"
