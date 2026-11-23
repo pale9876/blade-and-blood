@@ -4,3 +4,8 @@
 *.exp
 *.lib
 /godot/project/godot-rust/rusteasylib/target
+/.vscode
+/godot/project/alarm-program/.godot/mono
+/godot/project/project_revenant/.godot
+*.uid
+*.uid
