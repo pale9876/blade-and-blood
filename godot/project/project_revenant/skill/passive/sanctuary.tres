@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PassiveSkillInformation" format=3 uid="uid://6ylihv402nx8"]
+
+[ext_resource type="Script" uid="uid://hdybrgm2ckpr" path="res://script/resource/passive_information.gd" id="1_5e334"]
+
+[resource]
+script = ExtResource("1_5e334")
+perk_description = "범위 안에 있는 적 유닛 한 명당, 공격력과 행동속도가 {atk_motion_point}% 증가한다. (최대 {limit}%)"
+name = &"성역"
+metadata/_custom_type_script = "uid://hdybrgm2ckpr"

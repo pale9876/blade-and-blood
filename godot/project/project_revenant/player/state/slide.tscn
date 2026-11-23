@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://rcr22hd12ue1"]
+
+[ext_resource type="Script" uid="uid://c2pn8aieo5n42" path="res://player/slide.gd" id="1_amcmq"]
+
+[node name="Slide" type="LimboState" unique_id=591192304]
+script = ExtResource("1_amcmq")
+action_input = PackedStringArray("down", "front", "kick")
+ev_name = &"slide"

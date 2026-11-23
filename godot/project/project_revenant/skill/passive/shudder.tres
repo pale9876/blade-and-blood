@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PassiveSkillInformation" format=3 uid="uid://bad0nyxaxq73"]
+
+[ext_resource type="Script" uid="uid://hdybrgm2ckpr" path="res://script/resource/passive_information.gd" id="1_3nrdf"]
+[ext_resource type="PackedScene" uid="uid://c32vjbmpiteew" path="res://skill/passive/scene/shudder.tscn" id="1_npass"]
+
+[resource]
+script = ExtResource("1_3nrdf")
+perk_description = "공격력이 {atk}, 행동속도가 {motion_speed}% 증가한다."
+ae_index_scene = ExtResource("1_npass")
+name = &"분쇄기"
+metadata/_custom_type_script = "uid://hdybrgm2ckpr"

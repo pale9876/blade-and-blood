@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cf7q8iua00ikf"]
+
+[ext_resource type="Script" uid="uid://dpn1opeegcme2" path="res://ingame/world.gd" id="1_50kwp"]
+[ext_resource type="PackedScene" uid="uid://ccd41t1qrjttn" path="res://ingame/map/training_center.tscn" id="2_6dhv1"]
+[ext_resource type="PackedScene" uid="uid://cgjxkmo53vf01" path="res://ingame/map/keikai.tscn" id="5_2286k"]
+[ext_resource type="Script" uid="uid://b7phyhue4y3yg" path="res://player/player_camera.gd" id="6_vow8m"]
+[ext_resource type="Script" uid="uid://oxsm8uvgi23h" path="res://ingame/spectre.gd" id="7_177aw"]
+
+[node name="World" type="Node2D" unique_id=1777925288]
+script = ExtResource("1_50kwp")
+
+[node name="Map" parent="." unique_id=160920806 instance=ExtResource("2_6dhv1")]
+draw_region = false
+
+[node name="Keikai" parent="Map" unique_id=1292865989 instance=ExtResource("5_2286k")]
+unique_name_in_owner = true
+_left = 0
+_right = 1151
+_ceil = 0
+_floor = 266
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=1329053518]
+unique_name_in_owner = true
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 320
+script = ExtResource("6_vow8m")
+
+[node name="Spectre" type="Camera2D" parent="." unique_id=289083197]
+unique_name_in_owner = true
+script = ExtResource("7_177aw")

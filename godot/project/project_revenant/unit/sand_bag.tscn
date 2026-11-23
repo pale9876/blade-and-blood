@@ -1,0 +1,340 @@
+[gd_scene format=3 uid="uid://bpojlualakpuu"]
+
+[ext_resource type="Script" uid="uid://bl84ixx4kubfe" path="res://unit/unit.gd" id="1_xr0ca"]
+[ext_resource type="Script" uid="uid://cpsg0ho6132tj" path="res://ai/tasks/unit/set_act_state.gd" id="3_6c1mr"]
+[ext_resource type="PackedScene" uid="uid://cljktitiy0g50" path="res://component/sprite_component.tscn" id="3_k7avp"]
+[ext_resource type="Script" uid="uid://c3ykemf4n3om1" path="res://script/resource/unit_information.gd" id="3_t3pbd"]
+[ext_resource type="Script" uid="uid://dibqva5a64jvq" path="res://ai/tasks/unit/patrol_wait.gd" id="5_toejp"]
+[ext_resource type="Script" uid="uid://dmj17w1hipj7o" path="res://ai/tasks/unit/trace_target.gd" id="6_2clmh"]
+[ext_resource type="Script" uid="uid://bhhy483vjefa1" path="res://collision/dynamic_unit_collision.gd" id="7_gjkc3"]
+[ext_resource type="Script" uid="uid://cdbxf87eqivir" path="res://ai/tasks/set_target_position.gd" id="8_1kauj"]
+[ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_k7l50"]
+[ext_resource type="Script" uid="uid://bdj3moatwduju" path="res://script/unit_awareness.gd" id="9_yvxo8"]
+[ext_resource type="PackedScene" uid="uid://cfdt7041dne44" path="res://animated_tail.tscn" id="11_2e5g1"]
+[ext_resource type="Script" uid="uid://8cq3ted0s3ob" path="res://unit/state/idle.gd" id="11_3b2yn"]
+[ext_resource type="Script" uid="uid://ditjbaamrfw0k" path="res://unit/dynamic_collision.gd" id="13_k0h15"]
+[ext_resource type="Script" uid="uid://cflyf2esm4eqo" path="res://unit/state/fall.gd" id="13_pvbt4"]
+[ext_resource type="Script" uid="uid://8j24mmna7pmh" path="res://unit/state/jump.gd" id="14_w11yh"]
+[ext_resource type="Script" uid="uid://c1823275u0dxi" path="res://player/state/comment.gd" id="15_4fp7c"]
+[ext_resource type="AnimationLibrary" uid="uid://c2lftjcgk3lp4" path="res://motion/idle.res" id="15_507e4"]
+[ext_resource type="Script" uid="uid://nmmtety5yvve" path="res://player/state_machine.gd" id="15_yeahc"]
+[ext_resource type="Script" uid="uid://dmhr7bhy8lgt5" path="res://unit/move.gd" id="18_t3pbd"]
+[ext_resource type="Script" uid="uid://6eubdpqc1rif" path="res://unit/grabbed.gd" id="19_cibo8"]
+[ext_resource type="Script" uid="uid://h6umakp1bcu0" path="res://unit/grab.gd" id="20_2d64t"]
+[ext_resource type="Script" uid="uid://b1m4oejiu7ume" path="res://unit/knockback.gd" id="21_bnltu"]
+[ext_resource type="AnimationLibrary" uid="uid://cofr330818v1e" path="res://motion/down.res" id="21_wp6bj"]
+[ext_resource type="AnimationLibrary" uid="uid://d3445833nuf3o" path="res://motion/move.res" id="24_k0h15"]
+[ext_resource type="AnimationLibrary" uid="uid://c2h4k66ayh87g" path="res://motion/jump.res" id="26_4fp7c"]
+[ext_resource type="Script" uid="uid://dsjnx0cxf2gu1" path="res://unit/aerial.gd" id="26_itvhm"]
+[ext_resource type="Script" uid="uid://cattor5p0ysjp" path="res://unit/down.gd" id="27_74sws"]
+[ext_resource type="Script" uid="uid://8rj1txp84awx" path="res://unit/pushback.gd" id="28_njs1s"]
+[ext_resource type="AnimationLibrary" uid="uid://cyo676p46aw5v" path="res://motion/fall.res" id="28_yeahc"]
+[ext_resource type="Script" uid="uid://cqhhjr6ob8477" path="res://unit/wallhit.gd" id="29_a8ovg"]
+[ext_resource type="AnimationLibrary" uid="uid://docog8qdv8rj1" path="res://motion/aerial.res" id="30_njs1s"]
+[ext_resource type="AnimationLibrary" uid="uid://b5pittsqyeeq3" path="res://motion/knockback.res" id="30_v2yrs"]
+[ext_resource type="Script" uid="uid://im1wyvflgwp0" path="res://unit/state/unit_state.gd" id="33_qjbny"]
+[ext_resource type="AnimationLibrary" uid="uid://c4rqs4fs1eal4" path="res://motion/pushback.res" id="34_gjkc3"]
+[ext_resource type="Script" uid="uid://chb5h0vw5lpvq" path="res://player/motion_library.gd" id="36_yeahc"]
+[ext_resource type="Script" uid="uid://dr8n2mbhooxjo" path="res://player/hitbox_component.gd" id="37_v2yrs"]
+
+[sub_resource type="Resource" id="Resource_pvbt4"]
+script = ExtResource("3_t3pbd")
+is_replicant = false
+metadata/_custom_type_script = "uid://c3ykemf4n3om1"
+
+[sub_resource type="Gradient" id="Gradient_2ul3e"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.85779816)
+colors = PackedColorArray(0, 0, 0, 0.6666667, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqsic"]
+gradient = SubResource("Gradient_2ul3e")
+width = 16
+height = 8
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.85, 0.85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2yrs"]
+size = Vector2(38, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjkc3"]
+size = Vector2(38, 92)
+
+[sub_resource type="Animation" id="Animation_njs1s"]
+length = 0.001
+step = 0.016666668
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a8ovg"]
+_data = {
+&"RESET": SubResource("Animation_njs1s")
+}
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_2ul3e"]
+var/target/name = &"target"
+var/target/type = 24
+var/target/hint = 34
+var/target/hint_string = ""
+var/act/name = &"act"
+var/act/type = 4
+var/act/value = "patrol"
+var/act/hint = 0
+var/act/hint_string = ""
+var/move_order/name = &"move_order"
+var/move_order/type = 27
+var/move_order/value = {}
+var/move_order/hint = 0
+var/move_order/hint_string = ""
+
+[sub_resource type="BTAction" id="BTAction_a3q01"]
+script = ExtResource("3_6c1mr")
+
+[sub_resource type="BBVariant" id="BBVariant_4xbu7"]
+resource_name = "patrol"
+saved_value = "patrol"
+type = 4
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_a2j7n"]
+variable = &"act"
+value = SubResource("BBVariant_4xbu7")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_a2j7n"]
+_enabled = false
+text = "순찰 중"
+
+[sub_resource type="BTAction" id="BTAction_n0aob"]
+script = ExtResource("8_1kauj")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_4xbu7"]
+_enabled = false
+text = "잠시 쉬는 중"
+
+[sub_resource type="BTWait" id="BTWait_a2j7n"]
+script = ExtResource("5_toejp")
+
+[sub_resource type="BTSequence" id="BTSequence_j0e0d"]
+custom_name = "IF :: Act is \"patrol\""
+children = [SubResource("BTCheckVar_a2j7n"), SubResource("BTConsolePrint_a2j7n"), SubResource("BTAction_n0aob"), SubResource("BTConsolePrint_4xbu7"), SubResource("BTWait_a2j7n")]
+
+[sub_resource type="BBVariant" id="BBVariant_a3q01"]
+resource_name = "trace"
+saved_value = "trace"
+type = 4
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_4xbu7"]
+variable = &"act"
+value = SubResource("BBVariant_a3q01")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_j0e0d"]
+_enabled = false
+text = "타겟을 발견함."
+
+[sub_resource type="BTAction" id="BTAction_j0e0d"]
+script = ExtResource("6_2clmh")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_5dfwp"]
+_enabled = false
+text = "타겟이 인식반경에서 벗어남."
+
+[sub_resource type="BTSequence" id="BTSequence_a2j7n"]
+custom_name = "IF:: Act is \"Trace\""
+children = [SubResource("BTCheckVar_4xbu7"), SubResource("BTConsolePrint_j0e0d"), SubResource("BTAction_j0e0d"), SubResource("BTConsolePrint_5dfwp")]
+
+[sub_resource type="BBVariant" id="BBVariant_w11yh"]
+resource_name = "move"
+saved_value = "move"
+type = 4
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_1kauj"]
+variable = &"act"
+value = SubResource("BBVariant_w11yh")
+
+[sub_resource type="BTSequence" id="BTSequence_yvxo8"]
+custom_name = "IF :: Act is \"move\""
+children = [SubResource("BTCheckVar_1kauj")]
+
+[sub_resource type="BTSelector" id="BTSelector_5dfwp"]
+children = [SubResource("BTSequence_j0e0d"), SubResource("BTSequence_a2j7n"), SubResource("BTSequence_yvxo8")]
+
+[sub_resource type="BTSequence" id="BTSequence_eras8"]
+children = [SubResource("BTAction_a3q01"), SubResource("BTSelector_5dfwp")]
+
+[sub_resource type="BehaviorTree" id="BehaviorTree_2ul3e"]
+blackboard_plan = SubResource("BlackboardPlan_2ul3e")
+root_task = SubResource("BTSequence_eras8")
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_ak6ua"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_k0h15"]
+var/prefix/name = &"prefix"
+var/prefix/type = 21
+var/prefix/value = &""
+var/prefix/hint = 0
+var/prefix/hint_string = ""
+var/suffix/name = &"suffix"
+var/suffix/type = 21
+var/suffix/value = &""
+var/suffix/hint = 0
+var/suffix/hint_string = ""
+
+[node name="SandBag" type="CharacterBody2D" unique_id=2064536848 groups=["neutrality"]]
+collision_layer = 2
+script = ExtResource("1_xr0ca")
+info = SubResource("Resource_pvbt4")
+
+[node name="DropShadow" type="Sprite2D" parent="." unique_id=924943166]
+texture = SubResource("GradientTexture2D_wqsic")
+
+[node name="AnimatedTailLine" parent="." unique_id=581507229 instance=ExtResource("11_2e5g1")]
+position = Vector2(0, -48)
+rotation = 3.1415927
+scale = Vector2(0.22, -0.22)
+
+[node name="SpriteComponent" parent="." unique_id=363892716 instance=ExtResource("3_k7avp")]
+modulate = Color(1, 0, 0, 1)
+
+[node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=2120811417]
+position = Vector2(0, -46)
+shape = SubResource("RectangleShape2D_v2yrs")
+debug_color = Color(0, 0.6, 0.69803923, 0.2)
+script = ExtResource("7_gjkc3")
+metadata/_custom_type_script = "uid://bhhy483vjefa1"
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1792069261]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("8_k7l50")
+
+[node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=1180949192]
+position = Vector2(0, -46)
+shape = SubResource("RectangleShape2D_gjkc3")
+debug_color = Color(0.8509804, 0.03529412, 0.21960784, 0.39607844)
+script = ExtResource("7_gjkc3")
+metadata/_custom_type_script = "uid://bhhy483vjefa1"
+
+[node name="Awareness" type="Area2D" parent="." unique_id=731958170]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("9_yvxo8")
+
+[node name="DynamicCollision" type="CollisionPolygon2D" parent="Awareness" unique_id=1616752916]
+modulate = Color(1, 1, 1, 0.16078432)
+polygon = PackedVector2Array(-10, -215.5, -10, -40.5, 710, -40.5, 710, -215.5)
+script = ExtResource("13_k0h15")
+offset = Vector2(-10, -128)
+height = 175.0
+dist = 720.0
+
+[node name="HitboxComponent" type="Node2D" parent="." unique_id=1346051445]
+script = ExtResource("37_v2yrs")
+metadata/_custom_type_script = "uid://dr8n2mbhooxjo"
+
+[node name="MotionLibrary" type="AnimationPlayer" parent="." unique_id=1268957844]
+libraries/ = SubResource("AnimationLibrary_a8ovg")
+script = ExtResource("36_yeahc")
+
+[node name="BTPlayer" type="BTPlayer" parent="." unique_id=415912197]
+behavior_tree = SubResource("BehaviorTree_2ul3e")
+blackboard_plan = SubResource("BlackboardPlan_ak6ua")
+
+[node name="StateMachine" type="LimboHSM" parent="." unique_id=928114458 node_paths=PackedStringArray("label")]
+blackboard_plan = SubResource("BlackboardPlan_k0h15")
+script = ExtResource("15_yeahc")
+label = NodePath("../StateLabel")
+metadata/_custom_type_script = "uid://nmmtety5yvve"
+
+[node name="#Default" type="LimboState" parent="StateMachine" unique_id=1906376363]
+process_mode = 4
+script = ExtResource("15_4fp7c")
+metadata/_custom_type_script = "uid://c1823275u0dxi"
+
+[node name="Idle" type="LimboState" parent="StateMachine" unique_id=641009354]
+script = ExtResource("11_3b2yn")
+anim_library = ExtResource("15_507e4")
+library_name = &"idle"
+
+[node name="Move" type="LimboState" parent="StateMachine" unique_id=265379667]
+script = ExtResource("18_t3pbd")
+anim_library = ExtResource("24_k0h15")
+library_name = &"move"
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="Jump" type="LimboState" parent="StateMachine" unique_id=1875892619]
+script = ExtResource("14_w11yh")
+type = 1
+anim_library = ExtResource("26_4fp7c")
+library_name = &"jump"
+
+[node name="Fall" type="LimboState" parent="StateMachine" unique_id=1952545241]
+script = ExtResource("13_pvbt4")
+type = 1
+anim_library = ExtResource("28_yeahc")
+library_name = &"fall"
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="Dead" type="LimboState" parent="StateMachine" unique_id=1839768077]
+
+[node name="#HurtState" type="LimboState" parent="StateMachine" unique_id=231535512]
+process_mode = 4
+script = ExtResource("15_4fp7c")
+metadata/_custom_type_script = "uid://c1823275u0dxi"
+
+[node name="Knockback" type="LimboState" parent="StateMachine" unique_id=1168315294]
+script = ExtResource("21_bnltu")
+type = 2
+anim_library = ExtResource("30_v2yrs")
+library_name = &"knockback"
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="Aerial" type="LimboState" parent="StateMachine" unique_id=1444982]
+script = ExtResource("26_itvhm")
+type = 2
+anim_library = ExtResource("30_njs1s")
+library_name = &"aerial"
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="Down" type="LimboState" parent="StateMachine" unique_id=1321983700]
+script = ExtResource("27_74sws")
+type = 2
+anim_library = ExtResource("21_wp6bj")
+library_name = &"down"
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="Pushback" type="LimboState" parent="StateMachine" unique_id=1879459923]
+script = ExtResource("28_njs1s")
+type = 2
+anim_library = ExtResource("34_gjkc3")
+library_name = &"pushback"
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="Wallhit" type="LimboState" parent="StateMachine" unique_id=1048343805]
+script = ExtResource("29_a8ovg")
+type = 2
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="Pound" type="LimboState" parent="StateMachine" unique_id=1635532512]
+script = ExtResource("33_qjbny")
+type = 2
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="Grabbed" type="LimboState" parent="StateMachine" unique_id=1553039524]
+script = ExtResource("19_cibo8")
+type = 2
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="#ActState" type="LimboState" parent="StateMachine" unique_id=31685021]
+process_mode = 4
+script = ExtResource("15_4fp7c")
+metadata/_custom_type_script = "uid://c1823275u0dxi"
+
+[node name="Grab" type="LimboState" parent="StateMachine" unique_id=1141453359]
+script = ExtResource("20_2d64t")
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="StateLabel" type="Label" parent="." unique_id=1138912887]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[editable path="SpriteComponent"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PassiveSkillInformation" format=3 uid="uid://cgjnx1j1vgxuf"]
+
+[ext_resource type="Script" uid="uid://hdybrgm2ckpr" path="res://script/resource/passive_information.gd" id="1_ylcpb"]
+
+[resource]
+script = ExtResource("1_ylcpb")
+perk_description = "{limit_duration}초 안에 {trigger_damage}의 데미지를 받을 때, {skill_duration}초간 모든 공격에 면역되고, 공격력이 {atk_ratio}% 증가한다."
+name = &"생고기 다지기"
+metadata/_custom_type_script = "uid://hdybrgm2ckpr"

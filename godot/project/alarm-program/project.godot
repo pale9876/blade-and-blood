@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="alarm_program"
+run/main_scene="uid://cws4e7rgh6ws3"
+config/features=PackedStringArray("4.7", "C#", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Chrono="*uid://dt8xqrg84vctm"
+MaitreD="*uid://qjir4h4hoem5"
+
+[display]
+
+window/size/initial_position_type=0
+window/subwindows/embed_subwindows=false
+window/stretch/mode="canvas_items"
+window/per_pixel_transparency/allowed=true
+window/vsync/vsync_mode=0
+
+[dotnet]
+
+project/assembly_name="alarm_program"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/scriptory/plugin.cfg", "res://addons/yard/plugin.cfg")
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"

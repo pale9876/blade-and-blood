@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d06vrish3skke"]
+
+[ext_resource type="Script" uid="uid://xtf81rs5tcmg" path="res://IdleRpg.cs" id="1_tql1s"]
+[ext_resource type="Texture2D" uid="uid://c4lecc0iihsmb" path="res://Mono_Free Halloween/64/018.png" id="2_h3ay6"]
+[ext_resource type="Texture2D" uid="uid://trye0ifrpj7b" path="res://Mono_Free Halloween/64/001.png" id="2_ltr02"]
+
+[node name="IdleRPG" type="CanvasLayer" unique_id=220924818]
+script = ExtResource("1_tql1s")
+
+[node name="Control" type="Control" parent="." unique_id=1010939469]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=722179772]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -204.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Stage" type="Node2D" parent="." unique_id=985204975]
+
+[node name="Player" type="Node2D" parent="Stage" unique_id=760184305]
+position = Vector2(312, 292)
+
+[node name="Sprite" type="Sprite2D" parent="Stage/Player" unique_id=1055806678]
+texture = ExtResource("2_h3ay6")
+flip_h = true
+
+[node name="Monster" type="Node2D" parent="Stage" unique_id=1297017573]
+position = Vector2(833, 170)
+
+[node name="Sprite" type="Sprite2D" parent="Stage/Monster" unique_id=849542739]
+texture = ExtResource("2_ltr02")

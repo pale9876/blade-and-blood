@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BladeModuleInfo" format=3 uid="uid://qwtng4xxquwe"]
+
+[ext_resource type="Script" uid="uid://bikptipa3pwm6" path="res://script/resource/blade_module_info.gd" id="1_hs1uq"]
+
+[resource]
+script = ExtResource("1_hs1uq")
+name = &"피어나는 저주"
+description = "전방의 350px 범위에 있는 적들에게 마구 채찍을 휘두른다."
+weapon_compatibility = Array[int]([6])
+metadata/_custom_type_script = "uid://bikptipa3pwm6"

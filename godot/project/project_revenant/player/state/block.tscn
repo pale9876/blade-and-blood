@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://f6fubhe2evfi"]
+
+[ext_resource type="Script" uid="uid://bv4sobgleq2ba" path="res://player/block.gd" id="1_naobc"]
+
+[node name="Block" type="LimboState" unique_id=1514818620]
+script = ExtResource("1_naobc")
+_just = true
+ev_name = &"block"
+metadata/_custom_type_script = "uid://b7x8s5btnaxj2"

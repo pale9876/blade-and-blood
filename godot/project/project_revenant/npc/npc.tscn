@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://b7ya2gtphhn00"]
+
+[ext_resource type="Script" uid="uid://dqd845y1secly" path="res://script/npc/pathed_unit.gd" id="1_o6cys"]
+[ext_resource type="Shader" uid="uid://b7ev33xt35608" path="res://shader/pixel_shader_outline.gdshader" id="2_ocili"]
+[ext_resource type="Script" uid="uid://cktpq0kuvmge1" path="res://script/npc/npc_awareness.gd" id="3_fnhme"]
+[ext_resource type="SpriteFrames" uid="uid://72n3ls5rb05n" path="res://sample_motion_frames.tres" id="3_ocili"]
+[ext_resource type="Script" uid="uid://daj72rw34sd0j" path="res://script/npc/npc_collider.gd" id="4_phifv"]
+[ext_resource type="Script" uid="uid://cy6xk12udulfh" path="res://script/npc/visible_on_screen_notifier_2d.gd" id="4_uamtn"]
+[ext_resource type="Script" uid="uid://dxd14gsfsusdx" path="res://ai/tasks/if_target_not_null.gd" id="5_fnhme"]
+[ext_resource type="Script" uid="uid://bs1oqvm6y0hg8" path="res://ai/tasks/go_to_rand_pos.gd" id="5_ldo70"]
+[ext_resource type="Script" uid="uid://cjhrvvp4app32" path="res://ai/tasks/run_in_opposite_direction.gd" id="7_uamtn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_phifv"]
+shader = ExtResource("2_ocili")
+shader_parameter/top = false
+shader_parameter/left = false
+shader_parameter/right = true
+shader_parameter/bottom = false
+shader_parameter/topleft = false
+shader_parameter/topright = false
+shader_parameter/bottomleft = false
+shader_parameter/bottomright = false
+shader_parameter/color = Color(0.28, 0.0812, 0.0812, 1)
+shader_parameter/inside = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqsic"]
+size = Vector2(48, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_guff7"]
+size = Vector2(320, 136)
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_oydke"]
+var/target/name = &"target"
+var/target/type = 24
+var/target/hint = 0
+var/target/hint_string = ""
+var/rist_factor/name = &"rist_factor"
+var/rist_factor/type = 28
+var/rist_factor/value = []
+var/rist_factor/hint = 0
+var/rist_factor/hint_string = ""
+
+[sub_resource type="BTAction" id="BTAction_uamtn"]
+script = ExtResource("5_fnhme")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_uamtn"]
+_enabled = false
+text = "패트롤 랜덤 이동"
+
+[sub_resource type="BTAction" id="BTAction_fnhme"]
+script = ExtResource("5_ldo70")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_ocili"]
+_enabled = false
+text = "휴식 상태에 들어감."
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_fnhme"]
+min_duration = 5.0
+max_duration = 8.0
+
+[sub_resource type="BTSequence" id="BTSequence_bjcma"]
+custom_name = "Patrol"
+children = [SubResource("BTAction_uamtn"), SubResource("BTConsolePrint_uamtn"), SubResource("BTAction_fnhme"), SubResource("BTConsolePrint_ocili"), SubResource("BTRandomWait_fnhme")]
+
+[sub_resource type="BTAction" id="BTAction_ocili"]
+script = ExtResource("7_uamtn")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_phifv"]
+_enabled = false
+text = "타겟 발견 도주"
+
+[sub_resource type="BTSequence" id="BTSequence_fnhme"]
+custom_name = "Runaway"
+children = [SubResource("BTAction_ocili"), SubResource("BTConsolePrint_phifv")]
+
+[sub_resource type="BTSelector" id="BTSelector_5cnks"]
+children = [SubResource("BTSequence_bjcma"), SubResource("BTSequence_fnhme")]
+
+[sub_resource type="BehaviorTree" id="BehaviorTree_guff7"]
+blackboard_plan = SubResource("BlackboardPlan_oydke")
+root_task = SubResource("BTSelector_5cnks")
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_ocili"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuwyy"]
+size = Vector2(16, 56)
+
+[node name="NPC" type="PathFollow2D" unique_id=276246344]
+progress = 229.43999
+rotates = false
+loop = false
+script = ExtResource("1_o6cys")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=194746556]
+material = SubResource("ShaderMaterial_phifv")
+position = Vector2(0, -32)
+sprite_frames = ExtResource("3_ocili")
+animation = &"idle"
+offset = Vector2(0, -32)
+
+[node name="Collider" type="Area2D" parent="." unique_id=1503715288]
+script = ExtResource("4_phifv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" unique_id=694924862]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_wqsic")
+
+[node name="Awareness" type="Area2D" parent="." unique_id=75439026]
+script = ExtResource("3_fnhme")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Awareness" unique_id=625975509]
+position = Vector2(63.999992, -68)
+shape = SubResource("RectangleShape2D_guff7")
+debug_color = Color(0.7764706, 0.98039216, 0.03137255, 0.41960785)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1467290058]
+rect = Rect2(-80, -138.85715, 160, 237.7143)
+script = ExtResource("4_uamtn")
+
+[node name="BTPlayer" type="BTPlayer" parent="." unique_id=169513713]
+behavior_tree = SubResource("BehaviorTree_guff7")
+update_mode = 0
+blackboard_plan = SubResource("BlackboardPlan_ocili")
+
+[node name="LimboHSM" type="LimboHSM" parent="." unique_id=1397483233]
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=214457877]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1090026182]
+position = Vector2(0, -28)
+shape = SubResource("RectangleShape2D_tuwyy")
+debug_color = Color(0.88235295, 0.13333334, 0.3647059, 0.12156863)

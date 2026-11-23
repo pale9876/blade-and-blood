@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://cws4e7rgh6ws3"]
+
+[ext_resource type="Script" uid="uid://cer184vxufu3r" path="res://script/MainScene.cs" id="1_671wp"]
+[ext_resource type="Texture2D" uid="uid://cbtjhh34ucrco" path="res://icon.svg" id="2_2c62f"]
+[ext_resource type="Script" uid="uid://c6urpmh1rjegp" path="res://script/OpeningPanel.cs" id="2_7ycvg"]
+[ext_resource type="Script" uid="uid://bd1nuwsqkme7k" path="res://script/AlarmSystemStatus.cs" id="3_gyfs4"]
+[ext_resource type="PackedScene" uid="uid://f8eewm68ghou" path="res://task_reservation_ui.tscn" id="4_8mm7a"]
+[ext_resource type="Script" uid="uid://jm0tcriq50st" path="res://script/SettingUIWindow.cs" id="4_nfk4m"]
+[ext_resource type="Script" uid="uid://blrg6vjoljn0h" path="res://script/ReservationList.cs" id="5_hq1ik"]
+[ext_resource type="Script" uid="uid://bjlgkc6jvlbnu" path="res://script/PanelWindow.cs" id="6_mo76n"]
+[ext_resource type="PackedScene" uid="uid://jv72bbmnl1ki" path="res://global_settings.tscn" id="7_nfk4m"]
+[ext_resource type="Script" uid="uid://dpm6sqbk08g6w" path="res://script/RightDownPanel.cs" id="7_wr18j"]
+[ext_resource type="Script" uid="uid://rcjxigoemus" path="res://script/IndicatorMenu.cs" id="8_66tet"]
+[ext_resource type="FontFile" uid="uid://bbdob1hqihmxr" path="res://font/E1234-Regular.ttf" id="8_qwutr"]
+[ext_resource type="PackedScene" uid="uid://d06vrish3skke" path="res://idle_rpg.tscn" id="13_mo76n"]
+
+[sub_resource type="Animation" id="Animation_7ycvg"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_66tet"]
+resource_name = "opening"
+length = 3.0000000000000004
+step = 1.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ycvg"]
+_data = {
+&"RESET": SubResource("Animation_7ycvg"),
+&"opening": SubResource("Animation_66tet")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_wr18j"]
+font = ExtResource("8_qwutr")
+font_size = 36
+
+[node name="MainScene" type="Node" unique_id=511812974]
+script = ExtResource("1_671wp")
+
+[node name="SystemIndicator" type="StatusIndicator" parent="." unique_id=2109773341]
+tooltip = "Hello"
+icon = ExtResource("2_2c62f")
+menu = NodePath("IndicatorMenu")
+script = ExtResource("3_gyfs4")
+
+[node name="IndicatorMenu" type="PopupMenu" parent="SystemIndicator" unique_id=350937772]
+oversampling_override = 1.0
+content_scale_stretch = 1
+allow_search = false
+script = ExtResource("8_66tet")
+
+[node name="OpeningPanelWindow" type="Window" parent="." unique_id=124617179]
+transparent_bg = true
+oversampling_override = 1.0
+title = "Opening"
+borderless = true
+transparent = true
+mouse_passthrough = true
+script = ExtResource("6_mo76n")
+
+[node name="OpeningPanel" type="CanvasLayer" parent="OpeningPanelWindow" unique_id=1505191553]
+script = ExtResource("2_7ycvg")
+
+[node name="Control" type="Control" parent="OpeningPanelWindow/OpeningPanel" unique_id=867410830]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="OpeningPanelWindow/OpeningPanel/Control" unique_id=648084302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Opening" type="AudioStreamPlayer" parent="OpeningPanelWindow/OpeningPanel" unique_id=617102327]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OpeningPanelWindow/OpeningPanel" unique_id=1524901179]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_7ycvg")
+autoplay = &"opening"
+
+[node name="RightDownPanelWindow" type="Window" parent="." unique_id=1085377813]
+oversampling_override = 1.0
+visible = false
+script = ExtResource("6_mo76n")
+
+[node name="RightDownPanel" type="CanvasLayer" parent="RightDownPanelWindow" unique_id=757431731]
+script = ExtResource("7_wr18j")
+
+[node name="Control" type="Control" parent="RightDownPanelWindow/RightDownPanel" unique_id=605723629]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="RightDownPanelWindow/RightDownPanel/Control" unique_id=304980896]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0.007843138, 0.07058824, 0.52156866)
+
+[node name="CenterContainer" type="CenterContainer" parent="RightDownPanelWindow/RightDownPanel/Control" unique_id=1208586796]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TimeLabel" type="Label" parent="RightDownPanelWindow/RightDownPanel/Control/CenterContainer" unique_id=94474126]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0:00:00"
+label_settings = SubResource("LabelSettings_wr18j")
+
+[node name="SettingUIWindow" type="Window" parent="." unique_id=2099648790]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "작업 예약 패널"
+initial_position = 2
+size = Vector2i(400, 300)
+script = ExtResource("4_nfk4m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SettingUIWindow" unique_id=1117693838]
+
+[node name="Control" type="Control" parent="SettingUIWindow/CanvasLayer" unique_id=484658140]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TabContainer" type="TabContainer" parent="SettingUIWindow/CanvasLayer/Control" unique_id=839325871]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 1
+
+[node name="예약" parent="SettingUIWindow/CanvasLayer/Control/TabContainer" unique_id=1033003741 instance=ExtResource("4_8mm7a")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="리스트" type="TabBar" parent="SettingUIWindow/CanvasLayer/Control/TabContainer" unique_id=1460339503]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("5_hq1ik")
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingUIWindow/CanvasLayer/Control/TabContainer/리스트" unique_id=1569264065]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="설정" parent="SettingUIWindow/CanvasLayer/Control/TabContainer" unique_id=812908378 instance=ExtResource("7_nfk4m")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="IdleRPGPanelWindow" type="Window" parent="." unique_id=1133308310]
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+size = Vector2i(640, 360)
+visible = false
+script = ExtResource("6_mo76n")
+metadata/_custom_type_script = "uid://bjlgkc6jvlbnu"
+
+[node name="IdleRPG" parent="IdleRPGPanelWindow" unique_id=220924818 instance=ExtResource("13_mo76n")]

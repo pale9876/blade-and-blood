@@ -1,0 +1,539 @@
+[gd_scene format=3 uid="uid://01tn8ypbctbl"]
+
+[ext_resource type="Script" uid="uid://uabem6tefg3m" path="res://script/portrait.gd" id="1_md16t"]
+[ext_resource type="Texture2D" uid="uid://c3w8y5ghl8s3p" path="res://aseprite/source/portrait/portrait_outline.png" id="1_mdiga"]
+[ext_resource type="Texture2D" uid="uid://m8adi3f3sdnf" path="res://aseprite/source/portrait/predator_background.png" id="1_nsl6j"]
+[ext_resource type="Texture2D" uid="uid://lwwcmubt7bru" path="res://aseprite/source/portrait/left_ear.png" id="1_thy6q"]
+[ext_resource type="Texture2D" uid="uid://de6ol5lqisyg5" path="res://aseprite/source/portrait/back_hair.png" id="2_8if1f"]
+[ext_resource type="Script" uid="uid://bejsd3aj1pew6" path="res://script/portrait_parts_group.gd" id="2_52f74"]
+[ext_resource type="Texture2D" uid="uid://cn0wwu8ijp7h0" path="res://aseprite/source/portrait/neck.png" id="2_an34k"]
+[ext_resource type="Script" uid="uid://n8skusc4gmbb" path="res://script/resource/texture_group_information.gd" id="2_fqwvc"]
+[ext_resource type="Texture2D" uid="uid://rn276vpe8bhs" path="res://aseprite/source/portrait/left_side_tail.png" id="2_thy6q"]
+[ext_resource type="Texture2D" uid="uid://b5d615lptmcvn" path="res://aseprite/source/portrait/body.png" id="3_8if1f"]
+[ext_resource type="Texture2D" uid="uid://dyokbinst4lvj" path="res://aseprite/source/portrait/base.png" id="3_uftp8"]
+[ext_resource type="Texture2D" uid="uid://dji1gnjndr8xh" path="res://aseprite/source/portrait/mouth.png" id="4_hpmxg"]
+[ext_resource type="Texture2D" uid="uid://dmvotm2r0ipkk" path="res://aseprite/source/portrait/trickster_background.png" id="4_iwog6"]
+[ext_resource type="Texture2D" uid="uid://cxcuvgsrlxqy7" path="res://aseprite/source/portrait/clothes.png" id="4_md16t"]
+[ext_resource type="Texture2D" uid="uid://b0kehw80dyv16" path="res://aseprite/source/portrait/puppeteer_background.png" id="4_wh1xl"]
+[ext_resource type="Texture2D" uid="uid://b313cq766f5k3" path="res://aseprite/source/portrait/nose.png" id="5_kmnre"]
+[ext_resource type="Texture2D" uid="uid://d32qg1qduogcn" path="res://aseprite/source/portrait/eye.png" id="6_toyoc"]
+[ext_resource type="Texture2D" uid="uid://dnpdo72a3utjo" path="res://aseprite/source/portrait/backrace.png" id="7_hg1er"]
+[ext_resource type="Script" uid="uid://dfl0o0ebel7kj" path="res://script/portrait_unit.gd" id="7_hq63a"]
+[ext_resource type="Texture2D" uid="uid://bknle8ep0xsxx" path="res://aseprite/source/portrait/mole.png" id="7_nsl6j"]
+[ext_resource type="Script" uid="uid://c2i6y2hg2fehf" path="res://script/recolored_texture.gd" id="7_oe0rn"]
+[ext_resource type="Texture2D" uid="uid://bk50pisbhm5al" path="res://aseprite/source/portrait/right_ear.png" id="8_3q7db"]
+[ext_resource type="Shader" uid="uid://ctmcbltwyxhgv" path="res://shader/replace_color.gdshader" id="8_o1fl8"]
+[ext_resource type="Texture2D" uid="uid://3tpcl712i401" path="res://aseprite/source/portrait/right_side_tail.png" id="9_nb3ur"]
+[ext_resource type="Texture2D" uid="uid://k4ribgqa3hut" path="res://aseprite/source/portrait/front_hair.png" id="10_an34k"]
+[ext_resource type="Texture2D" uid="uid://c4wguu3fb2d00" path="res://aseprite/source/portrait/predator_foreground.png" id="12_3q7db"]
+[ext_resource type="Texture2D" uid="uid://cmj7x0acotgd0" path="res://aseprite/source/portrait/puppeteer_foreground.png" id="20_1o7f7"]
+[ext_resource type="Texture2D" uid="uid://c7l3nsfj0c3a3" path="res://aseprite/source/portrait/trickster_foreground.png" id="21_hg1er"]
+
+[sub_resource type="Resource" id="Resource_hq63a"]
+script = ExtResource("2_fqwvc")
+group = Array[NodePath]([NodePath("SubViewportContainer/SubViewport/BackHair"), NodePath("SubViewportContainer/SubViewport/Face/LeftSideTail"), NodePath("SubViewportContainer/SubViewport/Face/RightSideTail"), NodePath("SubViewportContainer/SubViewport/Face/FrontHair")])
+metadata/_custom_type_script = "uid://n8skusc4gmbb"
+
+[sub_resource type="Resource" id="Resource_fqwvc"]
+script = ExtResource("2_fqwvc")
+group = Array[NodePath]([NodePath("SubViewportContainer/SubViewport/Body/Body"), NodePath("SubViewportContainer/SubViewport/Body/Neck"), NodePath("SubViewportContainer/SubViewport/Face/Base"), NodePath("SubViewportContainer/SubViewport/Face/RightEar"), NodePath("SubViewportContainer/SubViewport/Face/LeftEar")])
+metadata/_custom_type_script = "uid://n8skusc4gmbb"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o1fl8"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ue8u8"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3if4e"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_td705"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rglmm"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_edb63"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xdbr"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yl8s6"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_70e7c"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5xx7i"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vhwbv"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rj2qj"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.55
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lv3y1"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k6kxw"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vebas"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rm0wi"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s87g4"]
+shader = ExtResource("8_o1fl8")
+shader_parameter/tolerance = 0.1
+shader_parameter/prev_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[node name="Portrait" type="Control" unique_id=432930676]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 180.0
+grow_vertical = 2
+script = ExtResource("1_md16t")
+metadata/_custom_type_script = "uid://uabem6tefg3m"
+
+[node name="ThemeBackground" type="Control" parent="." unique_id=244319353 node_paths=PackedStringArray("_root")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_52f74")
+_root = NodePath("..")
+metadata/_custom_type_script = "uid://bejsd3aj1pew6"
+
+[node name="Predator" type="TextureRect" parent="ThemeBackground" unique_id=642204162]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nsl6j")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Trickster" type="TextureRect" parent="ThemeBackground" unique_id=1644404486]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_iwog6")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Puppeteer" type="TextureRect" parent="ThemeBackground" unique_id=1946023492]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_wh1xl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Unit" type="Control" parent="." unique_id=466348523]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_hq63a")
+_hidden = true
+group = Dictionary[String, ExtResource("2_fqwvc")]({
+"hair": SubResource("Resource_hq63a"),
+"skin": SubResource("Resource_fqwvc")
+})
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Unit" unique_id=831391791]
+modulate = Color(18.892, 18.892, 18.892, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Unit/SubViewportContainer" unique_id=1403628027]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(180, 360)
+render_target_update_mode = 4
+
+[node name="BackHair" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport" unique_id=1496518954]
+material = SubResource("ShaderMaterial_o1fl8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8if1f")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="BackRace" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport" unique_id=1909693694]
+material = SubResource("ShaderMaterial_ue8u8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_hg1er")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="Body" type="Control" parent="Unit/SubViewportContainer/SubViewport" unique_id=617116911]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_52f74")
+metadata/_custom_type_script = "uid://bejsd3aj1pew6"
+
+[node name="Neck" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Body" unique_id=570265872]
+material = SubResource("ShaderMaterial_3if4e")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_an34k")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="Body" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Body" unique_id=954027459]
+material = SubResource("ShaderMaterial_td705")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8if1f")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="Clothes" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Body" unique_id=1245672550]
+material = SubResource("ShaderMaterial_rglmm")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_md16t")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="Face" type="Control" parent="Unit/SubViewportContainer/SubViewport" unique_id=1575947381]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_52f74")
+metadata/_custom_type_script = "uid://bejsd3aj1pew6"
+
+[node name="LeftEar" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Face" unique_id=1624350259]
+material = SubResource("ShaderMaterial_edb63")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_thy6q")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="LeftSideTail" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Face" unique_id=341915184]
+material = SubResource("ShaderMaterial_0xdbr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_thy6q")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="Base" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Face" unique_id=922557534]
+material = SubResource("ShaderMaterial_yl8s6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_uftp8")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="Mouth" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Face" unique_id=1655895055]
+material = SubResource("ShaderMaterial_70e7c")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_hpmxg")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="Nose" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Face" unique_id=1268076355]
+material = SubResource("ShaderMaterial_5xx7i")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_kmnre")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="Eye" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Face" unique_id=1532520577]
+material = SubResource("ShaderMaterial_vhwbv")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_toyoc")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="Eyebrown" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Face" unique_id=31856553]
+material = SubResource("ShaderMaterial_rj2qj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+tolerance = 0.55
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="Mole" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Face" unique_id=2108959531]
+material = SubResource("ShaderMaterial_lv3y1")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_nsl6j")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="RightEar" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Face" unique_id=1064614905]
+material = SubResource("ShaderMaterial_k6kxw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_3q7db")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="RightSideTail" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Face" unique_id=1286036288]
+material = SubResource("ShaderMaterial_vebas")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_nb3ur")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="FrontHair" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Face" unique_id=1792885568]
+material = SubResource("ShaderMaterial_rm0wi")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_an34k")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="Tsuno" type="TextureRect" parent="Unit/SubViewportContainer/SubViewport/Face" unique_id=470643615]
+material = SubResource("ShaderMaterial_s87g4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("7_oe0rn")
+metadata/_custom_type_script = "uid://c2i6y2hg2fehf"
+
+[node name="ThemeForeground" type="Control" parent="." unique_id=538883846 node_paths=PackedStringArray("_root")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_52f74")
+_root = NodePath("..")
+metadata/_custom_type_script = "uid://bejsd3aj1pew6"
+
+[node name="Predator" type="TextureRect" parent="ThemeForeground" unique_id=1880235867]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_3q7db")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Trickster" type="TextureRect" parent="ThemeForeground" unique_id=1125318996]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_hg1er")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Puppeteer" type="TextureRect" parent="ThemeForeground" unique_id=794981870]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_1o7f7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="PortraitOutline" type="TextureRect" parent="." unique_id=538041642]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mdiga")
+expand_mode = 1
+stretch_mode = 4

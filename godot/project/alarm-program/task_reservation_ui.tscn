@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://f8eewm68ghou"]
+
+[ext_resource type="Script" uid="uid://cn2k4vpnpfivw" path="res://script/TaskReservationUI.cs" id="1_580wq"]
+
+[node name="예약" type="TabBar" unique_id=1033003741]
+script = ExtResource("1_580wq")
+metadata/_tab_index = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=194024830]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=1378263944]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TaskEditContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=1156547166]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TaskNameEdit" type="LineEdit" parent="ScrollContainer/MarginContainer/TaskEditContainer" unique_id=282078995]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "작업 이름"
+
+[node name="TaskTimeEdit" type="HBoxContainer" parent="ScrollContainer/MarginContainer/TaskEditContainer" unique_id=1034006313]
+layout_mode = 2
+
+[node name="AMPM" type="OptionButton" parent="ScrollContainer/MarginContainer/TaskEditContainer/TaskTimeEdit" unique_id=1380729610]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "AM"
+popup/item_0/id = 0
+popup/item_1/text = "PM"
+popup/item_1/id = 1
+
+[node name="Hour" type="SpinBox" parent="ScrollContainer/MarginContainer/TaskEditContainer/TaskTimeEdit" unique_id=978258254]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 11.0
+suffix = "시"
+
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/MarginContainer/TaskEditContainer/TaskTimeEdit" unique_id=652123088]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/TaskEditContainer/TaskTimeEdit" unique_id=1629193407]
+layout_mode = 2
+
+[node name="Minute" type="SpinBox" parent="ScrollContainer/MarginContainer/TaskEditContainer/TaskTimeEdit/HBoxContainer" unique_id=705729261]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 59.0
+suffix = "분"
+
+[node name="IsDailyAlert" type="CheckBox" parent="ScrollContainer/MarginContainer/TaskEditContainer" unique_id=1915262685]
+unique_name_in_owner = true
+layout_mode = 2
+text = "매일 울려줘"
+
+[node name="CheckWantAlertDay" type="CheckBox" parent="ScrollContainer/MarginContainer/TaskEditContainer" unique_id=692372792]
+unique_name_in_owner = true
+layout_mode = 2
+text = "요일을 정하고 싶어"
+
+[node name="DayCheckBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/TaskEditContainer" unique_id=1674968741]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Sunday" type="CheckBox" parent="ScrollContainer/MarginContainer/TaskEditContainer/DayCheckBoxContainer" unique_id=760976618]
+layout_mode = 2
+text = "일"
+
+[node name="Monday" type="CheckBox" parent="ScrollContainer/MarginContainer/TaskEditContainer/DayCheckBoxContainer" unique_id=600568151]
+layout_mode = 2
+text = "월"
+
+[node name="Tuesday" type="CheckBox" parent="ScrollContainer/MarginContainer/TaskEditContainer/DayCheckBoxContainer" unique_id=1854930231]
+layout_mode = 2
+text = "화"
+
+[node name="Wednesday" type="CheckBox" parent="ScrollContainer/MarginContainer/TaskEditContainer/DayCheckBoxContainer" unique_id=773196785]
+layout_mode = 2
+text = "수"
+
+[node name="Thursday" type="CheckBox" parent="ScrollContainer/MarginContainer/TaskEditContainer/DayCheckBoxContainer" unique_id=1933595313]
+layout_mode = 2
+text = "목"
+
+[node name="Friday" type="CheckBox" parent="ScrollContainer/MarginContainer/TaskEditContainer/DayCheckBoxContainer" unique_id=733852096]
+layout_mode = 2
+text = "금"
+
+[node name="Saturday" type="CheckBox" parent="ScrollContainer/MarginContainer/TaskEditContainer/DayCheckBoxContainer" unique_id=1353159734]
+layout_mode = 2
+text = "토"
+
+[node name="DontAlertInHoliday" type="CheckBox" parent="ScrollContainer/MarginContainer/TaskEditContainer" unique_id=224529961]
+unique_name_in_owner = true
+layout_mode = 2
+text = "공휴일 금지"
+
+[node name="Reservation" type="Button" parent="ScrollContainer/MarginContainer/TaskEditContainer" unique_id=1075775296]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "추가"

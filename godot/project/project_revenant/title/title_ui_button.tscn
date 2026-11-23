@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://h46mjm4dsjnx"]
+
+[ext_resource type="Script" uid="uid://chmqpyka2hi81" path="res://title/title_ui_button.gd" id="1_1kxe0"]
+
+[sub_resource type="Animation" id="Animation_1kxe0"]
+resource_name = "hover"
+step = 0.0167
+
+[sub_resource type="Animation" id="Animation_8wuor"]
+resource_name = "idle"
+step = 0.0167
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8wuor"]
+_data = {
+&"hover": SubResource("Animation_1kxe0"),
+&"idle": SubResource("Animation_8wuor")
+}
+
+[node name="Start" type="Button" unique_id=1711081252]
+offset_right = 50.0
+offset_bottom = 31.0
+text = "Enter"
+script = ExtResource("1_1kxe0")
+metadata/_custom_type_script = "uid://tmumxa0lec7e"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=444427602]
+libraries/ = SubResource("AnimationLibrary_8wuor")

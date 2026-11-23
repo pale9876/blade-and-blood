@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="Registry" format=3 uid="uid://d31k515e4y6wn"]
+
+[ext_resource type="Script" uid="uid://dqtv77mng5dyh" path="res://addons/yard/registry.gd" id="1_oajvv"]
+
+[resource]
+script = ExtResource("1_oajvv")
+_version = 2
+_scan_rulesets = Array[Dictionary]([{
+&"allowed_file_extensions": Array[String]([".tres"]),
+&"class_restrictions": Array[StringName]([&"\"res://script/resource/blade_module_info.gd\""]),
+&"recursive_scan": false,
+&"scan_directories": Array[String](["res://blade"]),
+&"scan_regex_exclude": "",
+&"scan_regex_include": ""
+}])
+_uids_to_string_ids = Dictionary[StringName, StringName]({
+&"uid://6gslwgnenvv7": &"bonebreaker",
+&"uid://b8883hhv7s8qk": &"vile_knuckles",
+&"uid://blmojtc2jcqli": &"sway",
+&"uid://brb6in7ksrc6w": &"looka_bomba",
+&"uid://c3cxpy5yuhsyq": &"parabellum",
+&"uid://c5y24p6v31fl": &"pulverization",
+&"uid://c8ovbqvtvkppy": &"break_away",
+&"uid://cjyjcfxvbudn5": &"antia_rush",
+&"uid://cmsls046i5hqf": &"strike_hard",
+&"uid://cx6e3wf2mm5lc": &"punchdown",
+&"uid://dakjsreoubfws": &"quiten",
+&"uid://dbvlenrogclom": &"throw_out",
+&"uid://dce6xhr3dd0dd": &"showdown",
+&"uid://ddc7xwu0anobk": &"weapon_cursher",
+&"uid://dgykqr0yfwtks": &"battering_ram",
+&"uid://dkbxbna6u4vv": &"point_break",
+&"uid://gadxbi47dqs8": &"upper_cut",
+&"uid://m4qktwi562ly": &"guillotine",
+&"uid://ouheodyun1ue": &"burrow",
+&"uid://qwtng4xxquwe": &"cursed_bloom",
+&"uid://wvspf0ofxvtv": &"ekiten",
+&"uid://ye81gvc4wpxe": &"crumble"
+})
+_string_ids_to_uids = Dictionary[StringName, StringName]({
+&"antia_rush": &"uid://cjyjcfxvbudn5",
+&"battering_ram": &"uid://dgykqr0yfwtks",
+&"bonebreaker": &"uid://6gslwgnenvv7",
+&"break_away": &"uid://c8ovbqvtvkppy",
+&"burrow": &"uid://ouheodyun1ue",
+&"crumble": &"uid://ye81gvc4wpxe",
+&"cursed_bloom": &"uid://qwtng4xxquwe",
+&"ekiten": &"uid://wvspf0ofxvtv",
+&"guillotine": &"uid://m4qktwi562ly",
+&"looka_bomba": &"uid://brb6in7ksrc6w",
+&"parabellum": &"uid://c3cxpy5yuhsyq",
+&"point_break": &"uid://dkbxbna6u4vv",
+&"pulverization": &"uid://c5y24p6v31fl",
+&"punchdown": &"uid://cx6e3wf2mm5lc",
+&"quiten": &"uid://dakjsreoubfws",
+&"showdown": &"uid://dce6xhr3dd0dd",
+&"strike_hard": &"uid://cmsls046i5hqf",
+&"sway": &"uid://blmojtc2jcqli",
+&"throw_out": &"uid://dbvlenrogclom",
+&"upper_cut": &"uid://gadxbi47dqs8",
+&"vile_knuckles": &"uid://b8883hhv7s8qk",
+&"weapon_cursher": &"uid://ddc7xwu0anobk"
+})

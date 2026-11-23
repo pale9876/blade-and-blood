@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dja2l84ag0y1w"]
+
+[sub_resource type="Gradient" id="Gradient_qmgsn"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oj8hc"]
+gradient = SubResource("Gradient_qmgsn")
+width = 16
+height = 16
+
+[node name="Blank" type="Sprite2D" unique_id=2124565831]
+texture = SubResource("GradientTexture2D_oj8hc")

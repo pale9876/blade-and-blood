@@ -1,0 +1,457 @@
+[gd_scene format=3 uid="uid://ccd41t1qrjttn"]
+
+[ext_resource type="Script" uid="uid://bl0olstw3eapg" path="res://script/map.gd" id="1_2bbkv"]
+[ext_resource type="Script" uid="uid://b8c8aspwpnr43" path="res://script/route_guide_line.gd" id="2_cbop0"]
+[ext_resource type="Script" uid="uid://40r1tpxteoxv" path="res://script/pillar.gd" id="3_m02i6"]
+[ext_resource type="Texture2D" uid="uid://cue3j6hcdcy57" path="res://aseprite/tilemap/fireaxe.png" id="4_21i8w"]
+[ext_resource type="Script" uid="uid://xuoxmo1sa6u6" path="res://ingame/map/stage.gd" id="5_lx182"]
+[ext_resource type="PackedScene" uid="uid://bpojlualakpuu" path="res://unit/sand_bag.tscn" id="6_o6crk"]
+[ext_resource type="Script" uid="uid://63r2k5ira2ix" path="res://script/flow_texture.gd" id="7_v08yr"]
+[ext_resource type="Script" uid="uid://dxg3xn47blbqr" path="res://script/keikai_line.gd" id="8_g21xf"]
+[ext_resource type="Script" uid="uid://btxuckvcyog73" path="res://script/map_trigger_region.gd" id="9_7tqye"]
+[ext_resource type="AudioStream" uid="uid://cpb5k4jupenut" path="res://music/Tonight_You_Belong_to_Me.mp3" id="10_1ynr8"]
+[ext_resource type="Script" uid="uid://dxsid3k467hlh" path="res://script/MusicSpeaker.cs" id="11_yqs1f"]
+[ext_resource type="Script" uid="uid://devss3vthbfae" path="res://script/MapStateDebugPanel.gd" id="12_spekj"]
+
+[sub_resource type="Gradient" id="Gradient_utk2m"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.89, 0.89, 0.89, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5cnks"]
+gradient = SubResource("Gradient_utk2m")
+width = 2880
+height = 512
+
+[sub_resource type="Gradient" id="Gradient_j8vbj"]
+offsets = PackedFloat32Array(0, 0.98, 1, 1, 1)
+colors = PackedColorArray(0.95, 0.06649999, 0.06649999, 0, 0.95, 0.06649999, 0.06649999, 0, 0.95, 0.06649999, 0.06649999, 0, 0.95, 0.06649999, 0.06649999, 0, 0.95, 0.06649999, 0.06649999, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rk31c"]
+gradient = SubResource("Gradient_j8vbj")
+
+[sub_resource type="Curve" id="Curve_yegjs"]
+_data = [Vector2(0, 0), 0.0, 5.3871303, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -5.70637, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_2msmu"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.06374502, 0.19521913, 0.8286853, 0.9561753)
+colors = PackedColorArray(0.6313726, 0.6313726, 0.6313726, 1, 0.89411765, 0.89411765, 0.89411765, 1, 0.11858138, 0.11858138, 0.11858138, 1, 0.89411765, 0.89411765, 0.89411765, 1, 0.63, 0.63, 0.63, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7jywp"]
+gradient = SubResource("Gradient_2msmu")
+width = 512
+height = 512
+
+[sub_resource type="Gradient" id="Gradient_yegjs"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.4)
+colors = PackedColorArray(0.5729883, 0.5729883, 0.5729883, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yegjs"]
+gradient = SubResource("Gradient_yegjs")
+height = 512
+
+[sub_resource type="Gradient" id="Gradient_3fdsd"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.4)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_df3ex"]
+gradient = SubResource("Gradient_3fdsd")
+height = 512
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wxk4i"]
+diffuse_texture = SubResource("GradientTexture2D_yegjs")
+normal_texture = SubResource("GradientTexture2D_df3ex")
+
+[sub_resource type="Gradient" id="Gradient_mdcnb"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.9442231, 1)
+colors = PackedColorArray(0, 0.12876362, 0.16082978, 1, 0.15409331, 0.26, 0.1378, 1, 0.45635328, 0.77, 0.40809998, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2msmu"]
+gradient = SubResource("Gradient_mdcnb")
+width = 256
+height = 256
+fill = 2
+fill_from = Vector2(0.5, 0.5811966)
+fill_to = Vector2(0.9529914, 0.15811966)
+
+[sub_resource type="Gradient" id="Gradient_vpmvu"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tuwyy"]
+gradient = SubResource("Gradient_vpmvu")
+width = 2880
+height = 512
+
+[sub_resource type="Gradient" id="Gradient_k6cb8"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.87218046)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_guff7"]
+gradient = SubResource("Gradient_k6cb8")
+width = 8
+height = 8
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_latmj"]
+offsets = PackedFloat32Array(0, 0.294686)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yegjs"]
+gradient = SubResource("Gradient_latmj")
+
+[sub_resource type="Curve" id="Curve_df3ex"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.4314516, 0), -6.6048126, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yegjs"]
+curve = SubResource("Curve_df3ex")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2msmu"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(1440, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1696, 1, 0)
+direction = Vector3(1, 1, 0)
+spread = 22.5
+initial_velocity_min = 118.88
+initial_velocity_max = 279.72
+gravity = Vector3(0, 98, 0)
+linear_accel_min = 10.489998
+linear_accel_max = 22.379997
+scale_min = 0.35
+scale_max = 0.84999996
+scale_curve = SubResource("CurveTexture_yegjs")
+color_ramp = SubResource("GradientTexture1D_yegjs")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k6cb8"]
+gradient = SubResource("Gradient_vpmvu")
+width = 2880
+height = 512
+
+[sub_resource type="Curve" id="Curve_muwxp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5064378, 0), -5.410489, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_df3ex"]
+curve = SubResource("Curve_muwxp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_latmj"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(1440, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1805, 1, 0)
+direction = Vector3(0.5, 1, 0)
+spread = 9.922
+flatness = 0.095
+initial_velocity_min = 421.46
+initial_velocity_max = 733.86
+gravity = Vector3(0, 98, 0)
+linear_accel_min = 10.489998
+linear_accel_max = 22.379997
+scale_min = 0.049999997
+scale_max = 0.45
+scale_curve = SubResource("CurveTexture_yegjs")
+scale_over_velocity_min = 62.73
+scale_over_velocity_max = 110.7
+color_ramp = SubResource("GradientTexture1D_yegjs")
+alpha_curve = SubResource("CurveTexture_df3ex")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2a57"]
+size = Vector2(48, 112)
+
+[sub_resource type="Curve2D" id="Curve2D_5cnks"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 512, 0, 0, 0, 0, 2880, 512)
+}
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_muwxp"]
+offsets = PackedFloat32Array(0, 0.45019922, 0.47011954, 0.55378485, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.8016529, 0.8016529, 0.8016529, 0.8016529, 1, 1, 1, 1, 0.9899213, 0.9899213, 0.9899213, 0.93700784, 0.84, 0.84, 0.84, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f8sw5"]
+gradient = SubResource("Gradient_muwxp")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqsic"]
+size = Vector2(896, 192)
+
+[sub_resource type="Gradient" id="Gradient_wxk4i"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.6269841)
+colors = PackedColorArray(0.51718444, 0.5171845, 0.51718444, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vpmvu"]
+gradient = SubResource("Gradient_wxk4i")
+height = 512
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_muwxp"]
+gradient = SubResource("Gradient_k6cb8")
+width = 8
+height = 8
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k6cb8"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(1440, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1696, 1, 0)
+direction = Vector3(1, 1, 0)
+spread = 22.5
+initial_velocity_min = 118.88
+initial_velocity_max = 279.72
+gravity = Vector3(0, 98, 0)
+linear_accel_min = 10.489998
+linear_accel_max = 22.379997
+scale_min = 0.35
+scale_max = 0.84999996
+scale_curve = SubResource("CurveTexture_yegjs")
+color_ramp = SubResource("GradientTexture1D_yegjs")
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wqsic"]
+streams_count = 1
+stream_0/stream = ExtResource("10_1ynr8")
+
+[sub_resource type="Gradient" id="Gradient_kbfqu"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.29718876)
+colors = PackedColorArray(0, 0, 0, 1, 0.23031491, 0.23031494, 0.23031494, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gawmn"]
+gradient = SubResource("Gradient_kbfqu")
+height = 96
+
+[node name="TrainingCenter" type="Node2D" unique_id=379907041]
+script = ExtResource("1_2bbkv")
+color_variant = Dictionary[int, Color]({
+0: Color(0.7657456, 0.95833725, 0.7345308, 1),
+1: Color(0.99999994, 0.84966475, 0.6074793, 1),
+2: Color(0.85, 0.5404584, 0.04250001, 1),
+3: Color(1, 0, 0.016666412, 0.6431373),
+4: Color(0.24723494, 0.19723591, 0.27657324, 1)
+})
+debug_color = Color(0, 0.9098039, 0.8784314, 1)
+draw_region = true
+
+[node name="Background" type="Node2D" parent="." unique_id=547885106]
+unique_name_in_owner = true
+
+[node name="Wall" type="Sprite2D" parent="Background" unique_id=1603382819]
+clip_children = 2
+position = Vector2(1440, 256)
+texture = SubResource("GradientTexture2D_5cnks")
+
+[node name="Line2D" type="Line2D" parent="Background/Wall" unique_id=319588236]
+points = PackedVector2Array(-1440, 144, 1440, 144)
+width = 40.0
+default_color = Color(0.54901963, 0.80784315, 0.50980395, 1)
+
+[node name="Wallline" type="Line2D" parent="Background" unique_id=410014299]
+points = PackedVector2Array(0, 400, 2880, 400)
+default_color = Color(1, 0.7025, 0.14999998, 1)
+
+[node name="RouteGuideLine" type="Line2D" parent="Background" unique_id=1720506323]
+position = Vector2(4, 208)
+points = PackedVector2Array(-4, 192, 828, 192)
+width = 25.0
+texture = SubResource("GradientTexture1D_rk31c")
+texture_mode = 2
+script = ExtResource("2_cbop0")
+direction = 1
+alpha_curve = SubResource("Curve_yegjs")
+point_color = Color(0.95, 0.06649999, 0.06649999, 1)
+progress = 1.0
+cursor_space = 0.07100000000000001
+
+[node name="FloorLine" type="Line2D" parent="Background" unique_id=1020985535]
+points = PackedVector2Array(0, 496, 2880, 496)
+width = 32.0
+default_color = Color(0.36559817, 0.08056658, 0.043294057, 1)
+
+[node name="Hallway" type="Sprite2D" parent="Background" unique_id=1400576293]
+position = Vector2(1408, 256)
+texture = SubResource("GradientTexture2D_7jywp")
+
+[node name="Pillar" type="Node2D" parent="Background" unique_id=2102265721]
+position = Vector2(1088, 512)
+script = ExtResource("3_m02i6")
+texture = SubResource("CanvasTexture_wxk4i")
+metadata/_custom_type_script = "uid://40r1tpxteoxv"
+
+[node name="Pillar2" type="Node2D" parent="Background" unique_id=759365122]
+position = Vector2(2368, 512)
+script = ExtResource("3_m02i6")
+texture = SubResource("CanvasTexture_wxk4i")
+metadata/_custom_type_script = "uid://40r1tpxteoxv"
+
+[node name="Gate" type="Sprite2D" parent="Background" unique_id=2115428245]
+visible = false
+position = Vector2(960, 384)
+texture = SubResource("GradientTexture2D_2msmu")
+
+[node name="SnowWindow" type="Sprite2D" parent="Background" unique_id=1723624390]
+visible = false
+clip_children = 1
+texture = SubResource("GradientTexture2D_tuwyy")
+centered = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Background/SnowWindow" unique_id=858327951]
+position = Vector2(0, -128)
+amount = 512
+texture = SubResource("GradientTexture2D_guff7")
+lifetime = 7.25
+preprocess = 7.0
+randomness = 0.42
+visibility_rect = Rect2(0, 0, 2880, 512)
+process_material = SubResource("ParticleProcessMaterial_2msmu")
+
+[node name="RainParticleBackground" type="Sprite2D" parent="Background" unique_id=985076435]
+visible = false
+clip_children = 1
+texture = SubResource("GradientTexture2D_k6cb8")
+centered = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Background/RainParticleBackground" unique_id=1624869864]
+position = Vector2(0, -128)
+amount = 1024
+texture = SubResource("GradientTexture2D_guff7")
+lifetime = 5.31
+preprocess = 4.46
+visibility_rect = Rect2(0, 0, 2880, 512)
+trail_enabled = true
+trail_lifetime = 0.08
+process_material = SubResource("ParticleProcessMaterial_latmj")
+
+[node name="FireAxe" type="Sprite2D" parent="." unique_id=336031001]
+position = Vector2(328, 416)
+texture = ExtResource("4_21i8w")
+
+[node name="InteractArea" type="Area2D" parent="FireAxe" unique_id=1842107906]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireAxe/InteractArea" unique_id=419582120]
+shape = SubResource("RectangleShape2D_p2a57")
+
+[node name="Stage" type="Path2D" parent="." unique_id=495166901]
+unique_name_in_owner = true
+curve = SubResource("Curve2D_5cnks")
+script = ExtResource("5_lx182")
+metadata/_custom_type_script = "uid://xuoxmo1sa6u6"
+
+[node name="SandBag" parent="Stage" unique_id=2064536848 instance=ExtResource("6_o6crk")]
+position = Vector2(312, 512)
+
+[node name="FlowTexture" type="Sprite2D" parent="." unique_id=999238751 node_paths=PackedStringArray("_map")]
+position = Vector2(1440.0001, 728)
+scale = Vector2(5.6250005, 0.8515622)
+script = ExtResource("7_v08yr")
+_map = NodePath("..")
+normal_strength = 40.0
+
+[node name="Keikaisen" type="Node2D" parent="." unique_id=1689250500 node_paths=PackedStringArray("map")]
+script = ExtResource("8_g21xf")
+map = NodePath("..")
+texture = SubResource("GradientTexture2D_f8sw5")
+radius = 128
+
+[node name="StartSpawnPosition" type="Marker2D" parent="." unique_id=1159361734]
+position = Vector2(784, 512)
+
+[node name="SpawnPointGroup" type="Node2D" parent="." unique_id=1434909190]
+
+[node name="MapTriggerRegion" type="Area2D" parent="." unique_id=1414759223]
+position = Vector2(0, 32)
+script = ExtResource("9_7tqye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapTriggerRegion" unique_id=868768549]
+position = Vector2(704, 352)
+shape = SubResource("RectangleShape2D_wqsic")
+debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="Foreground" type="Node2D" parent="." unique_id=1565813838]
+unique_name_in_owner = true
+z_index = 1
+
+[node name="Pillar" type="Node2D" parent="Foreground" unique_id=2067147131]
+modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(536, 510)
+script = ExtResource("3_m02i6")
+texture = SubResource("GradientTexture2D_vpmvu")
+metadata/_custom_type_script = "uid://40r1tpxteoxv"
+
+[node name="Pillar3" type="Node2D" parent="Foreground" unique_id=1839977206]
+modulate = Color(1, 1, 1, 0.627451)
+position = Vector2(1752, 512)
+script = ExtResource("3_m02i6")
+texture = SubResource("GradientTexture2D_vpmvu")
+metadata/_custom_type_script = "uid://40r1tpxteoxv"
+
+[node name="SnowWindow" type="Sprite2D" parent="Foreground" unique_id=1484656501]
+visible = false
+clip_children = 1
+texture = SubResource("GradientTexture2D_tuwyy")
+centered = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Foreground/SnowWindow" unique_id=769237000]
+position = Vector2(0, -128)
+amount = 512
+texture = SubResource("GradientTexture2D_muwxp")
+lifetime = 7.25
+preprocess = 7.0
+randomness = 0.67
+visibility_rect = Rect2(0, 0, 2880, 512)
+process_material = SubResource("ParticleProcessMaterial_k6cb8")
+
+[node name="MusicSpeaker" type="AudioStreamPlayer2D" parent="." unique_id=1929033998]
+position = Vector2(232, 72)
+stream = SubResource("AudioStreamRandomizer_wqsic")
+autoplay = true
+bus = &"SFX"
+script = ExtResource("11_yqs1f")
+
+[node name="Sprite2D" type="Sprite2D" parent="MusicSpeaker" unique_id=1249851618]
+position = Vector2(-16, 8)
+texture = SubResource("GradientTexture2D_gawmn")
+offset = Vector2(16, -8)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=190470928]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=558830992]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuButton" type="MenuButton" parent="CanvasLayer/Control" unique_id=1475100214 node_paths=PackedStringArray("target_map")]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 40.0
+text = "Change Map State"
+alignment = 0
+item_count = 5
+popup/item_0/text = "SAFE"
+popup/item_0/id = 0
+popup/item_1/text = "ALERT"
+popup/item_1/id = 1
+popup/item_2/text = "DANGER"
+popup/item_2/id = 2
+popup/item_3/text = "BATTLE"
+popup/item_3/id = 3
+popup/item_4/text = "EVENT"
+popup/item_4/id = 4
+script = ExtResource("12_spekj")
+target_map = NodePath("../../..")

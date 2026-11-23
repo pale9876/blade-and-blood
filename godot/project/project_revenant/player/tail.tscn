@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://c1uoslrnfk3vt"]
+
+[ext_resource type="Script" uid="uid://b7k86uoip3rdc" path="res://script/trail_line.gd" id="1_l7pd7"]
+
+[sub_resource type="Curve2D" id="Curve2D_p036d"]
+_data = {
+"points": PackedVector2Array(11.02408, -7.4219265, -11.02408, 7.4219265, 0, -56, 7.1952944, 2.5219789, -7.1952944, -2.5219789, -24, -48, -14.586967, 9.049248, 14.586967, -9.049248, -16, -72)
+}
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_p036d"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 1.0738257), 0.0, 16.37189, 0, 0, Vector2(1, 0), -11.776322, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_6wior"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.07569721, 0.7051793)
+colors = PackedColorArray(0, 0, 0, 0, 0.9764706, 0.7137255, 0.19215687, 1, 1, 0.54509807, 0, 1)
+
+[sub_resource type="Animation" id="Animation_in1cm"]
+resource_name = "wag_2"
+length = 0.7348016511172056
+loop_mode = 1
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:curve:point_2/in")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.2666667, 0.33333334, 0.4, 0.4666667, 0.53333336, 0.6, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(7.4731083, -7.5953255), Vector2(-9.116758, -9.965306), Vector2(-11.41429, -13.36153), Vector2(-14.586967, 9.049248), Vector2(10.893387, 4.3717947), Vector2(-16.427887, -11.516871), Vector2(13.081992, -4.193878), Vector2(13.169615, 1.454536), Vector2(13.169615, 1.454536), Vector2(-2.2521152, 16.525772), Vector2(-9.612484, 4.2584877)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:curve:point_2/position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.2666667, 0.33333334, 0.4, 0.4666667, 0.53333336, 0.6, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(40, -48), Vector2(32, -64), Vector2(16, -72), Vector2(-16, -72), Vector2(-32, -24), Vector2(-16, -48), Vector2(-16, -72), Vector2(0, -80), Vector2(24, -72), Vector2(40, -48), Vector2(40, -32)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:curve:point_1/out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.2666667, 0.33333334, 0.4, 0.4666667, 0.53333336, 0.6, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(13.601753, 1.047569), Vector2(13.601753, 1.047569), Vector2(7.952713, -9.518142), Vector2(-7.1952944, -2.5219789), Vector2(-0.6788101, 8.455198), Vector2(-16.183704, 0.97922105), Vector2(-9.226762, -3.575715), Vector2(-5.7179327, -12.941523), Vector2(9.703796, -6.983127), Vector2(10.404783, 3.1811934), Vector2(7.951327, 3.8821807)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:curve:point_1/in")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.2666667, 0.33333334, 0.4, 0.4666667, 0.53333336, 0.6, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-13.601753, -1.047569), Vector2(-13.601753, -1.047569), Vector2(-7.952713, 9.518142), Vector2(7.1952944, 2.5219789), Vector2(0.6788101, -8.455198), Vector2(16.183704, -0.97922105), Vector2(9.226762, 3.575715), Vector2(5.7179327, 12.941523), Vector2(-9.703796, 6.983127), Vector2(-10.404783, -3.1811934), Vector2(-7.951327, -3.8821807)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:curve:point_1/position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.2666667, 0.33333334, 0.4, 0.4666667, 0.53333336, 0.6, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(24, -72), Vector2(0, -80), Vector2(-24, -72), Vector2(-24, -48), Vector2(-16, -40), Vector2(0, -72), Vector2(16, -72), Vector2(24, -64), Vector2(32, -48), Vector2(16, -32), Vector2(16, -32)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:curve:point_0/out")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.2666667, 0.33333334, 0.4, 0.4666667, 0.53333336, 0.6, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(5.732582, -12.725499), Vector2(-6.643985, -12.462168), Vector2(-14.834124, -8.313839), Vector2(-11.02408, 7.4219265), Vector2(-11.964031, 2.9789371), Vector2(12.736895, -8.5266075), Vector2(15.529586, 0.16760635), Vector2(21.795643, 7.237314), Vector2(9.177864, 13.546204), Vector2(3.9204564, 14.948179), Vector2(5.3224325, 17.051142)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:curve:point_0/position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.2666667, 0.33333334, 0.4, 0.4666667, 0.53333336, 0.6, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, -56), Vector2(0, -56), Vector2(0, -56), Vector2(0, -56), Vector2(0, -56), Vector2(0, -56), Vector2(0, -56), Vector2(0, -56), Vector2(0, -56), Vector2(0, -56), Vector2(0, -56)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:curve:point_0/in")
+tracks/7/interp = 0
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.2666667, 0.33333334, 0.4, 0.4666667, 0.53333336, 0.6, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-5.732582, 12.725499), Vector2(6.643985, 12.462168), Vector2(14.834124, 8.313839), Vector2(11.02408, -7.4219265), Vector2(11.964031, -2.9789371), Vector2(-12.736895, 8.5266075), Vector2(-15.529586, -0.16760635), Vector2(-21.795643, -7.237314), Vector2(-9.177864, -13.546204), Vector2(-3.9204564, -14.948179), Vector2(-5.3224325, -17.051142)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:curve:point_2/out")
+tracks/8/interp = 0
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.2666667, 0.33333334, 0.4, 0.4666667, 0.53333336, 0.6, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-7.4731083, 7.5953255), Vector2(9.116758, 9.965306), Vector2(11.41429, 13.36153), Vector2(14.586967, -9.049248), Vector2(-10.893387, -4.3717947), Vector2(16.427887, 11.516871), Vector2(-13.081992, 4.193878), Vector2(-13.169615, -1.454536), Vector2(-13.169615, -1.454536), Vector2(2.2521152, -16.525772), Vector2(9.612484, -4.2584877)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2kmqr"]
+_data = {
+&"wag": SubResource("Animation_in1cm")
+}
+
+[node name="Tail" type="Path2D" unique_id=1297482294]
+scale = Vector2(-1, 1)
+curve = SubResource("Curve2D_p036d")
+script = ExtResource("1_l7pd7")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=669880234]
+points = PackedVector2Array(0, -56, -7.3889456, -51.26422, -10.54112, -49.542187, -13.435795, -48.271034, -14.810953, -47.809303, -16.150997, -47.466003, -17.465675, -47.243046, -18.764748, -47.14233, -20.05796, -47.165764, -21.355072, -47.31525, -22.665836, -47.592693, -24, -48, -24.651506, -48.265053, -25.25616, -48.585724, -25.812828, -48.95957, -26.32038, -49.38417, -26.777683, -49.85709, -27.183609, -50.375893, -27.53703, -50.93814, -27.836807, -51.541412, -28.081816, -52.183266, -28.270924, -52.861275, -28.403, -53.572998, -28.476917, -54.31601, -28.491543, -55.08788, -28.445742, -55.886166, -28.168346, -57.552277, -27.635693, -59.294876, -26.838734, -61.094505, -25.768425, -62.9317, -24.415714, -64.787, -22.771564, -66.640945, -20.826923, -68.47407, -18.572752, -70.26691, -16, -72)
+width = 5.25
+width_curve = SubResource("Curve_p036d")
+gradient = SubResource("Gradient_6wior")
+texture_mode = 2
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=966065172]
+libraries/ = SubResource("AnimationLibrary_2kmqr")

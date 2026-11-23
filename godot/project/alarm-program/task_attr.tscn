@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://d2r6wsga1qc4t"]
+
+[ext_resource type="Script" uid="uid://d367i6r74ahac" path="res://TaskAttr.cs" id="1_sn0g6"]
+
+[node name="TaskAttr" type="HBoxContainer" unique_id=1330840575]
+theme_override_constants/separation = 8
+alignment = 1
+script = ExtResource("1_sn0g6")
+
+[node name="TaskName" type="Label" parent="." unique_id=38029422]
+layout_mode = 2
+text = "작업명"
+
+[node name="Hour" type="Label" parent="." unique_id=1131147045]
+layout_mode = 2
+text = "%s시"
+
+[node name="Minute" type="Label" parent="." unique_id=1034970521]
+layout_mode = 2
+text = "%s분"
+
+[node name="Edit" type="Button" parent="." unique_id=1310223785]
+layout_mode = 2
+text = "Edit"
+
+[node name="Del" type="Button" parent="." unique_id=1135239338]
+layout_mode = 2
+text = "Del"

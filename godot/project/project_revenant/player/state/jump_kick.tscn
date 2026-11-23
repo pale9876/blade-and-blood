@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c7ovni3xc3aqc"]
+
+[ext_resource type="Script" uid="uid://b7x8s5btnaxj2" path="res://player/state/player_state.gd" id="1_ygc78"]
+
+[node name="JumpKick" type="LimboState" unique_id=1156718825]
+script = ExtResource("1_ygc78")
+ev_name = &"jump_kick"
+metadata/_custom_type_script = "uid://b7x8s5btnaxj2"

@@ -1,0 +1,405 @@
+[gd_scene format=3 uid="uid://bmixhq1gmfep0"]
+
+[ext_resource type="Shader" uid="uid://bd4f5p3v3qtik" path="res://shield.gdshader" id="1_vuocu"]
+[ext_resource type="Shader" uid="uid://bfspq3flp3ung" path="res://hologram.gdshader" id="2_dmnlx"]
+[ext_resource type="Script" uid="uid://dxmbyvd6r5yv8" path="res://script/shield.gd" id="2_xc41h"]
+[ext_resource type="Texture2D" uid="uid://6i8earjob7ty" path="res://icon.svg" id="3_0vxx4"]
+[ext_resource type="Shader" uid="uid://c86hist45hua4" path="res://parallax_space.gdshader" id="4_0vxx4"]
+[ext_resource type="Shader" uid="uid://oub5qlf30tea" path="res://dark_noise_vignette.gdshader" id="5_4re53"]
+[ext_resource type="Script" uid="uid://1try4xg1mltr" path="res://script/attack_field_preview.gd" id="6_tgr6k"]
+[ext_resource type="Shader" uid="uid://cpj4xxh6yl0v" path="res://rain_drop.gdshader" id="8_41k7r"]
+[ext_resource type="Shader" uid="uid://dncg6uaca8v5g" path="res://glass_rect.gdshader" id="9_gdxae"]
+[ext_resource type="Shader" uid="uid://c5bpy64fbjmr8" path="res://effect_progression.gdshader" id="10_kjr8o"]
+[ext_resource type="Texture2D" uid="uid://bue6yeoniv3u3" path="res://flush_vfx/Air 1.png" id="11_kjr8o"]
+[ext_resource type="Script" uid="uid://dscdfe07b8fou" path="res://addons/BurstParticles2D/BurstParticleGroup2D.gd" id="12_1e71e"]
+[ext_resource type="Script" uid="uid://cyerv4k0ak4gu" path="res://addons/BurstParticles2D/BurstParticles2D.gd" id="13_1e71e"]
+
+[sub_resource type="Gradient" id="Gradient_vuocu"]
+offsets = PackedFloat32Array(0.9051383, 0.9525692, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ffst0"]
+gradient = SubResource("Gradient_vuocu")
+fill = 1
+fill_from = Vector2(0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nsxlm"]
+shader = ExtResource("1_vuocu")
+shader_parameter/gradient_2d = SubResource("GradientTexture2D_ffst0")
+shader_parameter/shield_color = Color(1, 1, 1, 1)
+shader_parameter/interior_alpha = 0.1290000061275
+shader_parameter/rim_width = 0.035
+shader_parameter/rim_strength = 5.0
+shader_parameter/glow_strength = 0.800000038
+shader_parameter/hex_scale = 10.8710003263725
+shader_parameter/hex_line_width = 0.05500000226324
+shader_parameter/hex_strength = 0.9370000445075
+shader_parameter/flow_strength = 0.1990000094525
+shader_parameter/flow_speed = 0.9550000453625
+shader_parameter/flow_width = 0.25000001024506
+shader_parameter/pond_alpha = 0.67999998480064
+
+[sub_resource type="Gradient" id="Gradient_1e71e"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mvqs3"]
+gradient = SubResource("Gradient_1e71e")
+width = 128
+height = 128
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wqsic"]
+shader = ExtResource("2_dmnlx")
+shader_parameter/tint = Color(0.8992584, 0.8992584, 0.8992584, 1)
+shader_parameter/opacity = 1.0
+shader_parameter/edge_glow = 0.7650000363375
+shader_parameter/line_count = 90.0
+shader_parameter/line_strength = 0.50800002413
+shader_parameter/scroll_speed = 1.3010002517975003
+shader_parameter/flicker = 0.50000002375
+shader_parameter/glitch = 0.630000029925
+shader_parameter/glitch_shift = 0.20000000298023
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0vxx4"]
+shader = ExtResource("4_0vxx4")
+shader_parameter/bg_color = Color(0, 0, 0, 0)
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/bigStarSlow = 2.0
+shader_parameter/mediumStarSlow = 6.0
+shader_parameter/smallStarSlow = 8.0
+shader_parameter/smallStarAmount = 0.002
+shader_parameter/mediumStarAmount = 0.01
+shader_parameter/bigStarAmount = 0.02
+
+[sub_resource type="Gradient" id="Gradient_n164e"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wspo6"]
+gradient = SubResource("Gradient_n164e")
+width = 1024
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tgr6k"]
+shader = ExtResource("5_4re53")
+shader_parameter/radius = 0.53999998792992
+shader_parameter/speed = 0.92999997921264
+shader_parameter/effect_color = Color(0.10416666, 0.25, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gdxae"]
+render_priority = 0
+shader = ExtResource("8_41k7r")
+shader_parameter/rain_amount = 0.242000011495
+shader_parameter/speed = 0.758000036005
+shader_parameter/blur_amount = 2.0
+shader_parameter/uv_scale = Vector2(2, -1)
+shader_parameter/frosted_blur = 0.5
+shader_parameter/distance_blur_scale = 0.1
+shader_parameter/refraction_strength = 0.05
+shader_parameter/frosted_noise_scale = 143.6050067737375
+shader_parameter/glass_thickness = 0.2
+shader_parameter/ior = 1.45
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wqsic"]
+material = SubResource("ShaderMaterial_gdxae")
+size = Vector2(3.575, 2.33)
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7jywp"]
+shader = ExtResource("9_gdxae")
+shader_parameter/scale = 105.5410048231975
+shader_parameter/gap = 15.50800068913
+shader_parameter/angle = 45.0
+shader_parameter/glass_tint = Color(1, 1, 1, 0.09803922)
+shader_parameter/stripe_color = Color(0.7266666, 0.6, 1, 0.03529412)
+shader_parameter/sun_color = Color(1, 1, 1, 1)
+shader_parameter/dash_cell = 6.0
+shader_parameter/dash_density = 0.078000003705
+shader_parameter/dash_size = 1.0
+shader_parameter/dashes_enabled = true
+shader_parameter/border_enabled = true
+shader_parameter/border_size = 8.046000381486481
+shader_parameter/border_dash_cell = 15.0
+shader_parameter/border_dash_density = 0.5
+shader_parameter/border_dash_size = 1.0
+shader_parameter/border_dashes_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_greoi"]
+shader = ExtResource("10_kjr8o")
+shader_parameter/inner_radius = 0.31200001482
+shader_parameter/inner_offset = Vector2(0, 0)
+shader_parameter/outer_radius = 0.462000021945
+shader_parameter/outer_offset = Vector2(0, 0)
+shader_parameter/spin_center = Vector2(-0.4, 0)
+shader_parameter/lead_angle = 0.0
+shader_parameter/tail_angle = 1.238000058805
+
+[sub_resource type="Gradient" id="Gradient_275sl"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kjr8o"]
+gradient = SubResource("Gradient_275sl")
+width = 256
+height = 256
+
+[sub_resource type="Animation" id="Animation_vivl0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/lead_angle")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1e71e"]
+resource_name = "slash"
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/lead_angle")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(-0.5, 0.27739242),
+"update": 0,
+"values": [0.0, 2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mvqs3"]
+_data = {
+&"RESET": SubResource("Animation_vivl0"),
+&"slash": SubResource("Animation_1e71e")
+}
+
+[sub_resource type="Gradient" id="Gradient_mvqs3"]
+offsets = PackedFloat32Array(0.4979592, 0.75510204)
+colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7jywp"]
+gradient = SubResource("Gradient_mvqs3")
+width = 8
+height = 8
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_wspo6"]
+_data = [Vector2(0, 0.3370787), 0.0, 4.3290534, 0, 0, Vector2(0.3655914, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_mvqs3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.50595236, 0), -6.2921357, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_mvqs3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VFXSamples:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VFXSamples:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kjr8o"]
+resource_name = "air_3"
+length = 0.30060166227519514
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VFXSamples:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VFXSamples:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.116666675, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_n164e"]
+resource_name = "flush_1"
+step = 0.0167
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vivl0"]
+_data = {
+&"RESET": SubResource("Animation_mvqs3"),
+&"air_3": SubResource("Animation_kjr8o"),
+&"flush_1": SubResource("Animation_n164e")
+}
+
+[node name="ShaderDemo" type="Node2D" unique_id=810744210]
+
+[node name="Shield" type="Sprite2D" parent="." unique_id=563947196]
+visible = false
+material = SubResource("ShaderMaterial_nsxlm")
+position = Vector2(-174, 0)
+texture = SubResource("GradientTexture2D_mvqs3")
+offset = Vector2(0, -64)
+script = ExtResource("2_xc41h")
+
+[node name="Hologram" type="Sprite2D" parent="." unique_id=417139842]
+visible = false
+material = SubResource("ShaderMaterial_wqsic")
+position = Vector2(344, 208)
+texture = ExtResource("3_0vxx4")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=239825852]
+visible = false
+
+[node name="StarParallaxField" type="SubViewportContainer" parent="CanvasLayer2" unique_id=298012907]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer2/StarParallaxField" unique_id=994732560]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/StarParallaxField/SubViewport" unique_id=1936851095]
+material = SubResource("ShaderMaterial_0vxx4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AttackFieldPreview" type="Sprite2D" parent="." unique_id=1380718227]
+visible = false
+texture = SubResource("GradientTexture2D_wspo6")
+offset = Vector2(512, -128)
+script = ExtResource("6_tgr6k")
+width = 1024
+height = 256
+progress = 1.0
+
+[node name="Screen1" type="CanvasLayer" parent="." unique_id=1061189929]
+visible = false
+
+[node name="DarkNoise" type="ColorRect" parent="Screen1" unique_id=935143987]
+material = SubResource("ShaderMaterial_tgr6k")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Screen2" type="CanvasLayer" parent="." unique_id=1866689547]
+visible = false
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Screen2" unique_id=2093875867]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Screen2/SubViewportContainer" unique_id=1164167613]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Screen2/SubViewportContainer/SubViewport" unique_id=1413306621]
+mesh = SubResource("PlaneMesh_wqsic")
+
+[node name="Camera3D" type="Camera3D" parent="Screen2/SubViewportContainer/SubViewport" unique_id=1040936105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0585766)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1955964556]
+visible = false
+
+[node name="GlassFilter" type="ColorRect" parent="CanvasLayer" unique_id=515922248]
+material = SubResource("ShaderMaterial_7jywp")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=616273926]
+material = SubResource("ShaderMaterial_greoi")
+position = Vector2(148.0766, 124.26753)
+scale = Vector2(1.8535788, 1.4151137)
+skew = 1.1903145
+texture = SubResource("GradientTexture2D_kjr8o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1314750914]
+libraries/ = SubResource("AnimationLibrary_mvqs3")
+
+[node name="VFXSamples" type="Sprite2D" parent="." unique_id=57805593]
+texture = ExtResource("11_kjr8o")
+flip_v = true
+hframes = 11
+
+[node name="BurstParticleGroup2D" type="Node2D" parent="VFXSamples" unique_id=1405618429]
+script = ExtResource("12_1e71e")
+repeat = false
+autostart = false
+metadata/_custom_type_script = "uid://dscdfe07b8fou"
+
+[node name="BurstParticles2D" type="Node2D" parent="VFXSamples" unique_id=1112581107]
+script = ExtResource("13_1e71e")
+num_particles = 13
+lifetime = 0.925
+lifetime_randomness = 0.455
+autostart = false
+texture = SubResource("GradientTexture2D_7jywp")
+image_scale = 4.0
+image_scale_randomness = 0.74
+direction = Vector2(1, 1)
+distance_randomness = 0.691
+align_sprite_rotation = false
+start_radius = 57.287
+percent_force_uniform = 27.429
+distance_curve = SubResource("Curve_wspo6")
+scale_curve = SubResource("Curve_mvqs3")
+metadata/_custom_type_script = "uid://cyerv4k0ak4gu"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VFXSamples" unique_id=1851692170]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_vivl0")

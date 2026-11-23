@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BladeModuleInfo" format=3 uid="uid://6gslwgnenvv7"]
+
+[ext_resource type="Script" uid="uid://bikptipa3pwm6" path="res://script/resource/blade_module_info.gd" id="1_lj0ta"]
+
+[resource]
+script = ExtResource("1_lj0ta")
+name = &"본브레이커"
+description = "전방을 향해 미끄러지며 이동하며 강하게 내려찍는다.
+호환되는 무기장착 시, 피격된 적에게 추가적인 타격을 한다."
+weapon_compatibility = 2
+metadata/_custom_type_script = "uid://bikptipa3pwm6"

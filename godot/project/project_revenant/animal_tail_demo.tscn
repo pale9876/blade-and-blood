@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://buwm6vc0te1be"]
+
+[ext_resource type="Script" uid="uid://7bcvh07m418k" path="res://script/tail_path_2d.gd" id="2_4voq8"]
+
+[sub_resource type="Curve" id="Curve_71ccw"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0.272727), 0.0, 12.282472, 1, 0, Vector2(1, 0), -19.840925, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_4voq8"]
+offsets = PackedFloat32Array(0, 0.0513834, 1)
+colors = PackedColorArray(0.30588236, 1, 1, 0, 0.3360614, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="Curve2D" id="Curve2D_71ccw"]
+_data = {
+"points": PackedVector2Array(0, 0, 6.689182, 7.43336, 0, 0, -5.879791, -6.5339236, 13.361641, 14.848137, 23.16909, 25.746675, -23.209948, 137.38103, 0, 0, 93.43306, 13.225976)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_4voq8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5.3333282, -15.186447, -0.83165836, -27.45295, 0.83165836, 27.45295, 16, 15.186432, 0, 0, 0, 0, 0, 45.55931)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_jdwou"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 8, -104, 2.251183, -54.874954, -2.251183, 54.874954, 40, -32, 0, 0, 0, 0, 8, 32)
+}
+point_count = 3
+
+[node name="Demo" type="Node2D" unique_id=52742903]
+
+[node name="Tail" type="Line2D" parent="." unique_id=859378972]
+position = Vector2(304, 192)
+points = PackedVector2Array(0, 0, 23.16909, 25.746675, 24.480368, 27.407034, 25.905125, 29.562273, 29.072527, 35.106483, 36.52088, 49.373585, 45.153057, 64.533615, 49.80024, 71.194016, 52.18685, 74.074776, 54.607964, 76.572266, 57.057922, 78.62378, 58.29196, 79.46269, 59.531097, 80.16658, 60.774624, 80.727615, 62.02184, 81.13795, 63.272034, 81.38975, 64.524506, 81.47517, 65.77855, 81.38636, 67.033455, 81.1155, 68.28853, 80.65474, 69.54305, 79.99623, 70.796326, 79.13214, 72.047646, 78.054634, 73.29631, 76.75586, 74.541595, 75.22798, 77.019264, 71.45355, 79.475006, 66.668625, 84.29815, 53.816364, 93.43306, 13.225976)
+width = 15.0
+width_curve = SubResource("Curve_71ccw")
+default_color = Color(1, 0.22352941, 0, 1)
+gradient = SubResource("Gradient_4voq8")
+joint_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 2
+
+[node name="Path2D" type="Path2D" parent="Tail" unique_id=1233250280]
+curve = SubResource("Curve2D_71ccw")
+script = ExtResource("2_4voq8")
+playing = true
+speed_scale = 7.55
+m_rat = 10356.9597563707
+n_rat = 10355.011968925472
+mid_in = 8.79
+mid_out = 19.975
+end_strength = 2292.81
+
+[node name="MiddlePath" type="Path2D" parent="Tail/Path2D" unique_id=2061563779]
+unique_name_in_owner = true
+position = Vector2(16, -16.000006)
+scale = Vector2(1.5, 1.0535715)
+curve = SubResource("Curve2D_4voq8")
+
+[node name="Middle" type="PathFollow2D" parent="Tail/Path2D/MiddlePath" unique_id=2124305860]
+unique_name_in_owner = true
+position = Vector2(7.169091, 41.74668)
+rotation = 2.423848
+progress = 62.26547
+
+[node name="EndPath" type="Path2D" parent="Tail/Path2D" unique_id=465058308]
+unique_name_in_owner = true
+position = Vector2(56, 24)
+curve = SubResource("Curve2D_jdwou")
+
+[node name="End" type="PathFollow2D" parent="Tail/Path2D/EndPath" unique_id=115512213]
+unique_name_in_owner = true
+position = Vector2(37.43306, -10.774024)
+rotation = 1.7819663
+progress = 104.102646

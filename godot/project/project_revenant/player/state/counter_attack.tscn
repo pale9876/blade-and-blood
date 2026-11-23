@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bbevlftsygn0c"]
+
+[ext_resource type="Script" uid="uid://b055wwf4d617f" path="res://player/counter_attack.gd" id="1_og0qo"]
+
+[node name="CounterAttack" type="LimboState" unique_id=893071231]
+script = ExtResource("1_og0qo")
+action_input = PackedStringArray("down", "front", "block")
+ev_name = &"counter"

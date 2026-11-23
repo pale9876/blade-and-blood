@@ -1,0 +1,261 @@
+[gd_scene format=3 uid="uid://br4srsyh160du"]
+
+[ext_resource type="Script" uid="uid://c2uxhumgng18h" path="res://player/player.gd" id="1_bvu1k"]
+[ext_resource type="Script" uid="uid://cy5ux4udfco7" path="res://script/ae_index_library.gd" id="2_7crtr"]
+[ext_resource type="Script" uid="uid://q16mnu0o6wme" path="res://script/ware.gd" id="2_n0b8q"]
+[ext_resource type="Script" uid="uid://nmmtety5yvve" path="res://player/state_machine.gd" id="3_2ieo8"]
+[ext_resource type="Script" uid="uid://c08p61o8pw6vo" path="res://player/state/idle.gd" id="4_bvu1k"]
+[ext_resource type="PackedScene" uid="uid://cum6ko7v3402w" path="res://skill/passive/scene/confession.tscn" id="4_w7j2h"]
+[ext_resource type="PackedScene" uid="uid://c1uoslrnfk3vt" path="res://player/tail.tscn" id="5_7crtr"]
+[ext_resource type="Script" uid="uid://c4q85mvv6k6wb" path="res://player/state/move.gd" id="5_40lky"]
+[ext_resource type="Script" uid="uid://w3ah3quqa0le" path="res://player/blob_shadow.gd" id="6_jbx34"]
+[ext_resource type="Script" uid="uid://d376evb3whf7e" path="res://player/fall.gd" id="6_yllr7"]
+[ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="7_3dxkp"]
+[ext_resource type="Script" uid="uid://b0paoljcmbiys" path="res://player/sprite_component.gd" id="8_a1u5o"]
+[ext_resource type="Script" uid="uid://bhhy483vjefa1" path="res://collision/dynamic_unit_collision.gd" id="8_pjwc4"]
+[ext_resource type="Script" uid="uid://chb5h0vw5lpvq" path="res://player/motion_library.gd" id="9_55jnj"]
+[ext_resource type="Script" uid="uid://tmgum3lt28ad" path="res://player/state/jump.gd" id="10_8t03j"]
+[ext_resource type="PackedScene" uid="uid://icrh2ja363p" path="res://karada_template/noru/idle.tscn" id="11_6wior"]
+[ext_resource type="Script" uid="uid://cndvhxjxpob1j" path="res://script/state_label.gd" id="13_n0b8q"]
+[ext_resource type="Script" uid="uid://c1823275u0dxi" path="res://player/state/comment.gd" id="15_fjxoa"]
+[ext_resource type="PackedScene" uid="uid://f6fubhe2evfi" path="res://player/state/block.tscn" id="17_uw77l"]
+[ext_resource type="Script" uid="uid://bksr64dd5dok4" path="res://player/knockback.gd" id="18_q28gw"]
+[ext_resource type="PackedScene" uid="uid://cd03qmykfoaw7" path="res://player/state/dodge.tscn" id="21_b8hi5"]
+[ext_resource type="Script" uid="uid://dr8n2mbhooxjo" path="res://player/hitbox_component.gd" id="22_uw77l"]
+[ext_resource type="Script" uid="uid://crbctkdtf2jqy" path="res://script/resource/unit_motion_information.gd" id="24_8pxes"]
+[ext_resource type="AudioStream" uid="uid://dx55wb37m6lso" path="res://audio/sfx/footstep/Footstep_CONCRETE_barefoot_run_01.wav" id="30_vgvch"]
+[ext_resource type="AudioStream" uid="uid://be6ehfo1lss2b" path="res://audio/sfx/footstep/Footstep_CONCRETE_barefoot_run_02.wav" id="31_a1u5o"]
+[ext_resource type="AudioStream" uid="uid://dcfwb7ybfp6ht" path="res://audio/sfx/footstep/Footstep_CONCRETE_barefoot_run_03.wav" id="32_3dxkp"]
+[ext_resource type="AudioStream" uid="uid://dfg4rq0g51nrc" path="res://audio/sfx/footstep/Footstep_CONCRETE_barefoot_run_04.wav" id="33_6wior"]
+[ext_resource type="AudioStream" uid="uid://s2f5opa84uh5" path="res://audio/sfx/footstep/Footstep_CONCRETE_barefoot_run_05.wav" id="34_p5tca"]
+[ext_resource type="Script" uid="uid://dsjnx0cxf2gu1" path="res://unit/aerial.gd" id="35_1so5t"]
+[ext_resource type="AudioStream" uid="uid://b8fuxgnql4k3p" path="res://audio/sfx/footstep/Footstep_CONCRETE_barefoot_run_06.wav" id="35_jbx34"]
+[ext_resource type="Script" uid="uid://sjqmjeqxy8nt" path="res://player/health.gd" id="51_w7j2h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2uvqg"]
+size = Vector2(38, 92)
+
+[sub_resource type="Gradient" id="Gradient_1s1yo"]
+interpolation_mode = 1
+colors = PackedColorArray(0.77870363, 0.01541409, 2.8878452e-07, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5ejfk"]
+gradient = SubResource("Gradient_1s1yo")
+height = 10
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.789, 0.789)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jd2rm"]
+size = Vector2(50, 81)
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_sweqy"]
+var/move_list/name = &"move_list"
+var/move_list/type = 27
+var/move_list/value = {}
+var/move_list/hint = 0
+var/move_list/hint_string = ""
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_w7j2h"]
+playback_mode = 1
+streams_count = 6
+stream_0/stream = ExtResource("30_vgvch")
+stream_1/stream = ExtResource("31_a1u5o")
+stream_2/stream = ExtResource("32_3dxkp")
+stream_3/stream = ExtResource("33_6wior")
+stream_4/stream = ExtResource("34_p5tca")
+stream_5/stream = ExtResource("35_jbx34")
+
+[sub_resource type="Resource" id="Resource_mmwog"]
+script = ExtResource("24_8pxes")
+metadata/_custom_type_script = "uid://crbctkdtf2jqy"
+
+[sub_resource type="Animation" id="Animation_7crtr"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_wpyo2"]
+resource_name = "sampl"
+step = 0.016666668
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7crtr"]
+_data = {
+&"RESET": SubResource("Animation_7crtr"),
+&"sampl": SubResource("Animation_wpyo2")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7j2h"]
+bg_color = Color(0.18790352, 1.1619064e-06, 6.617978e-07, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0b8q"]
+bg_color = Color(0.66751045, 0.8457531, 0.9618806, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[node name="Player" type="CharacterBody2D" unique_id=1697822384]
+collision_layer = 2
+input_pickable = true
+floor_snap_length = 10.0
+script = ExtResource("1_bvu1k")
+
+[node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=1250735462]
+position = Vector2(0, -46)
+shape = SubResource("RectangleShape2D_2uvqg")
+script = ExtResource("8_pjwc4")
+metadata/_custom_type_script = "uid://bhhy483vjefa1"
+
+[node name="Ware" type="Node" parent="." unique_id=504440058]
+script = ExtResource("2_n0b8q")
+metadata/_custom_type_script = "uid://q16mnu0o6wme"
+
+[node name="Weapon" type="Node" parent="." unique_id=40338638]
+
+[node name="AEIndexLibrary" type="Node2D" parent="." unique_id=977612540]
+script = ExtResource("2_7crtr")
+metadata/_custom_type_script = "uid://cy5ux4udfco7"
+
+[node name="Confession" parent="AEIndexLibrary" unique_id=916381794 instance=ExtResource("4_w7j2h")]
+
+[node name="DropShadow" type="Sprite2D" parent="." unique_id=981265406]
+texture = SubResource("GradientTexture2D_5ejfk")
+script = ExtResource("6_jbx34")
+colors = PackedColorArray(0.77870363, 0.01541409, 2.8878452e-07, 1, 1, 1, 1, 0)
+mask = 4
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1484439855]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("7_3dxkp")
+state = 3
+
+[node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=78373728]
+position = Vector2(-0.5, -46.5)
+shape = SubResource("RectangleShape2D_jd2rm")
+debug_color = Color(0.7921569, 0, 0.07450981, 0.41960785)
+script = ExtResource("8_pjwc4")
+width = 50
+height = 81
+offset_y = 6
+metadata/_custom_type_script = "uid://bhhy483vjefa1"
+
+[node name="Tail" parent="." unique_id=1297482294 instance=ExtResource("5_7crtr")]
+rotation = -3.1415925
+scale = Vector2(1, -1)
+
+[node name="SpriteComponent" type="Node2D" parent="." unique_id=363892716 node_paths=PackedStringArray("current")]
+process_mode = 3
+script = ExtResource("8_a1u5o")
+current = NodePath("Idle")
+
+[node name="Idle" parent="SpriteComponent" unique_id=1893632528 instance=ExtResource("11_6wior")]
+position = Vector2(0, -64)
+
+[node name="HitboxComponent" type="Node2D" parent="." unique_id=1243634124]
+script = ExtResource("22_uw77l")
+
+[node name="StateMachine" type="LimboHSM" parent="." unique_id=2015169286]
+blackboard_plan = SubResource("BlackboardPlan_sweqy")
+script = ExtResource("3_2ieo8")
+
+[node name="#Default" type="LimboState" parent="StateMachine" unique_id=1422560660]
+process_mode = 4
+script = ExtResource("15_fjxoa")
+
+[node name="Idle" type="LimboState" parent="StateMachine" unique_id=382262949]
+script = ExtResource("4_bvu1k")
+
+[node name="Move" type="LimboState" parent="StateMachine" unique_id=1139494425]
+script = ExtResource("5_40lky")
+footstep_sound = SubResource("AudioStreamRandomizer_w7j2h")
+
+[node name="Fall" type="LimboState" parent="StateMachine" unique_id=216460520]
+script = ExtResource("6_yllr7")
+
+[node name="Jump" type="LimboState" parent="StateMachine" unique_id=736184237]
+script = ExtResource("10_8t03j")
+
+[node name="Block" parent="StateMachine" unique_id=1514818620 instance=ExtResource("17_uw77l")]
+
+[node name="Dodge" parent="StateMachine" unique_id=1740608329 instance=ExtResource("21_b8hi5")]
+just_time = true
+motion_info = SubResource("Resource_mmwog")
+
+[node name="#HurtState" type="LimboState" parent="StateMachine" unique_id=1837165163]
+process_mode = 4
+script = ExtResource("15_fjxoa")
+metadata/_custom_type_script = "uid://c1823275u0dxi"
+
+[node name="Knockback" type="LimboState" parent="StateMachine" unique_id=1004344550]
+script = ExtResource("18_q28gw")
+
+[node name="UnitState" type="LimboState" parent="StateMachine" unique_id=1571237167]
+script = ExtResource("35_1so5t")
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="#ActState" type="LimboState" parent="StateMachine" unique_id=1682804032]
+process_mode = 4
+script = ExtResource("15_fjxoa")
+metadata/_custom_type_script = "uid://c1823275u0dxi"
+
+[node name="MotionLibrary" type="AnimationPlayer" parent="." unique_id=1781161408]
+callback_mode_discrete = 0
+libraries/ = SubResource("AnimationLibrary_7crtr")
+script = ExtResource("9_55jnj")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1367097236]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -128.0
+offset_right = 40.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_w7j2h")
+theme_override_styles/fill = SubResource("StyleBoxFlat_n0b8q")
+max_value = 1.0
+step = 0.001
+value = 0.5
+show_percentage = false
+script = ExtResource("51_w7j2h")
+
+[node name="StateLabel" type="Label" parent="." unique_id=1166794144]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -160.0
+offset_right = 75.5
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "State: %s"
+horizontal_alignment = 1
+script = ExtResource("13_n0b8q")
+
+[editable path="StateMachine/Block"]
+[editable path="StateMachine/Dodge"]

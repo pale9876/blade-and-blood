@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PassiveSkillInformation" format=3 uid="uid://5udxobqp28ll"]
+
+[ext_resource type="PackedScene" uid="uid://cum6ko7v3402w" path="res://skill/passive/scene/confession.tscn" id="1_2jupf"]
+[ext_resource type="Script" uid="uid://hdybrgm2ckpr" path="res://script/resource/passive_information.gd" id="1_tdgwo"]
+
+[resource]
+script = ExtResource("1_tdgwo")
+perk_description = "{radius}의 범위 안에 적이 두 명 이상 적이 접근 시, 범위 내에 있는 적들의 방어력이 {def_ratio} 감소한다."
+ae_index_scene = ExtResource("1_2jupf")
+enable = true
+name = &"고해"
+metadata/_custom_type_script = "uid://hdybrgm2ckpr"

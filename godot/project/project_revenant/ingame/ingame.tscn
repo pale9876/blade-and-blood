@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dv5bn46oy0fst"]
+
+[ext_resource type="Script" uid="uid://lf1g8r7wbov3" path="res://ingame/ingame.gd" id="1_wnhdf"]
+[ext_resource type="PackedScene" uid="uid://cf7q8iua00ikf" path="res://ingame/world.tscn" id="2_xvj36"]
+
+[node name="IngameCanvas" type="CanvasLayer" unique_id=906912944]
+follow_viewport_enabled = true
+script = ExtResource("1_wnhdf")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1430906595]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IngameSubviewport" type="SubViewport" parent="SubViewportContainer" unique_id=1733976081]
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="World" parent="SubViewportContainer/IngameSubviewport" unique_id=1777925288 instance=ExtResource("2_xvj36")]
+unique_name_in_owner = true

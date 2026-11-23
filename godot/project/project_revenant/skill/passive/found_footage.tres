@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PassiveSkillInformation" format=3 uid="uid://nx55x8yniwiq"]
+
+[ext_resource type="Script" uid="uid://hdybrgm2ckpr" path="res://script/resource/passive_information.gd" id="1_6274h"]
+
+[resource]
+script = ExtResource("1_6274h")
+perk_description = "전투 상태 돌입 시, 행동속도와 공격력이 20초간 20% 증가한다."
+name = &"출처 불명"
+metadata/_custom_type_script = "uid://hdybrgm2ckpr"

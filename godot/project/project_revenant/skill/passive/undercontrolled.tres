@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PassiveSkillInformation" format=3 uid="uid://2j37ys2ie36k"]
+
+[ext_resource type="Texture2D" uid="uid://bhqvn5ck1cxoh" path="res://aseprite/icon/passive_통제.png" id="1_5l1pi"]
+[ext_resource type="Script" uid="uid://hdybrgm2ckpr" path="res://script/resource/passive_information.gd" id="1_a0swl"]
+
+[resource]
+script = ExtResource("1_a0swl")
+perk_description = "바닥에 매다꽂는 잡기 기술에 좁은 범위의 충격파가 생성된다. 충격파는 주변의 적과 NPC 상관없이 가까운 2명의 적을 낮게 띄운다."
+enable = true
+name = &"통제불능"
+icon = ExtResource("1_5l1pi")
+metadata/_custom_type_script = "uid://hdybrgm2ckpr"

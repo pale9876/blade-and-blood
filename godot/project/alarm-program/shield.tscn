@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bmixhq1gmfep0"]
+
+[ext_resource type="Shader" uid="uid://ba6cw155b16k1" path="res://shield.gdshader" id="1_vuocu"]
+
+[sub_resource type="Gradient" id="Gradient_vuocu"]
+offsets = PackedFloat32Array(0, 0.006451613, 0.516129)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ffst0"]
+gradient = SubResource("Gradient_vuocu")
+fill = 1
+fill_from = Vector2(0, 0.00913242)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nsxlm"]
+shader = ExtResource("1_vuocu")
+shader_parameter/gradient_2d = SubResource("GradientTexture2D_ffst0")
+shader_parameter/shield_color = Color(1, 0.61960787, 1, 1)
+shader_parameter/interior_alpha = 0.1290000061275
+shader_parameter/rim_width = 0.035
+shader_parameter/rim_strength = 5.0
+shader_parameter/glow_strength = 0.800000038
+shader_parameter/hex_scale = 10.8710003263725
+shader_parameter/hex_line_width = 0.05500000226324
+shader_parameter/hex_strength = 0.9370000445075
+shader_parameter/flow_strength = 0.4910000233225
+shader_parameter/flow_speed = 2.48800011818
+shader_parameter/flow_width = 0.25000001024506
+shader_parameter/pond_alpha = 0.67999998480064
+
+[sub_resource type="Gradient" id="Gradient_nsxlm"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.657754)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqsic"]
+gradient = SubResource("Gradient_nsxlm")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Node2D" type="Node2D" unique_id=810744210]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=563947196]
+material = SubResource("ShaderMaterial_nsxlm")
+position = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_wqsic")

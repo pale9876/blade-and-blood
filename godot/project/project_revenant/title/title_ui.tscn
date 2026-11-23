@@ -1,0 +1,293 @@
+[gd_scene format=3 uid="uid://d30oqfxv18ru8"]
+
+[ext_resource type="Texture2D" uid="uid://c1kdqekuqw0nx" path="res://aseprite/asso_project/title/MainTitle2.png" id="2_n4ayq"]
+[ext_resource type="Script" uid="uid://cgy23ubrds5ul" path="res://title/title_ui.gd" id="2_x1875"]
+[ext_resource type="PackedScene" uid="uid://h46mjm4dsjnx" path="res://title/title_ui_button.tscn" id="3_x1875"]
+[ext_resource type="PackedScene" uid="uid://cx4rv6pkatvx8" path="res://title/class_settings_ui.tscn" id="4_ekv4d"]
+[ext_resource type="PackedScene" uid="uid://cy3jqego7pk8c" path="res://title/ingame_option_ui.tscn" id="14_2segn"]
+[ext_resource type="PackedScene" uid="uid://be5es7kj8my7a" path="res://title/character_list.tscn" id="19_t4lib"]
+[ext_resource type="Script" uid="uid://dq6jdkets46eg" path="res://title/character_list.gd" id="20_wif7g"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ibxtg"]
+device = -1
+pressed = true
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_ibxtg"]
+events = [SubResource("InputEventKey_ibxtg")]
+
+[node name="TitleUI" type="Control" unique_id=1482659797]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_x1875")
+
+[node name="TitleScreen" type="TextureRect" parent="." unique_id=1100489049]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 642.0
+offset_top = -148.0
+offset_right = 788.1929
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-1, 1)
+texture = ExtResource("2_n4ayq")
+stretch_mode = 2
+flip_h = true
+
+[node name="MainUI" type="HBoxContainer" parent="." unique_id=1118765805]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SelectMenu" type="MarginContainer" parent="MainUI" unique_id=1038479927]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="CenterContainer2" type="CenterContainer" parent="MainUI/SelectMenu" unique_id=1601494086]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="FirstPage" type="VBoxContainer" parent="MainUI/SelectMenu/CenterContainer2" unique_id=1442055490]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Control" type="Control" parent="MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=43230102]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Start" parent="MainUI/SelectMenu/CenterContainer2/FirstPage/Control" unique_id=938715085 instance=ExtResource("3_x1875")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_bottom = NodePath("../../Control2/Option")
+shortcut = SubResource("Shortcut_ibxtg")
+
+[node name="Control2" type="Control" parent="MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=199738953]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Option" parent="MainUI/SelectMenu/CenterContainer2/FirstPage/Control2" unique_id=1081531110 instance=ExtResource("3_x1875")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_bottom = NodePath("../../Control4/Profile")
+text = "Option"
+
+[node name="Control4" type="Control" parent="MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=2122794870]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Profile" parent="MainUI/SelectMenu/CenterContainer2/FirstPage/Control4" unique_id=1816342281 instance=ExtResource("3_x1875")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_bottom = NodePath("../../Control6/Achievement")
+text = "Profile"
+
+[node name="Control6" type="Control" parent="MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=619786638]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Achievement" parent="MainUI/SelectMenu/CenterContainer2/FirstPage/Control6" unique_id=175316624 instance=ExtResource("3_x1875")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_bottom = NodePath("../../Control3/MapEditor")
+text = "Achievement
+"
+
+[node name="Control3" type="Control" parent="MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=1435637914]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MapEditor" parent="MainUI/SelectMenu/CenterContainer2/FirstPage/Control3" unique_id=1506696403 instance=ExtResource("3_x1875")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_bottom = NodePath("../../Control/Start")
+text = "Map Editor"
+
+[node name="SecondPage" type="VBoxContainer" parent="MainUI/SelectMenu/CenterContainer2" unique_id=271771578]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Control5" type="Control" parent="MainUI/SelectMenu/CenterContainer2/SecondPage" unique_id=489709038]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Class" parent="MainUI/SelectMenu/CenterContainer2/SecondPage/Control5" unique_id=445445138 instance=ExtResource("3_x1875")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Class"
+
+[node name="Control7" type="Control" parent="MainUI/SelectMenu/CenterContainer2/SecondPage" unique_id=1505873761]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Character" parent="MainUI/SelectMenu/CenterContainer2/SecondPage/Control7" unique_id=957775897 instance=ExtResource("3_x1875")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Character"
+
+[node name="TitleUI" type="MarginContainer" parent="MainUI" unique_id=1500526658]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="MainUI/TitleUI" unique_id=1988627511]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="MainUI/TitleUI/MarginContainer" unique_id=1813979292]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="Title" type="Label" parent="MainUI/TitleUI/MarginContainer/CenterContainer" unique_id=724634022]
+layout_mode = 2
+text = "Anti-Apocalypse Strategy Organization"
+
+[node name="ClassSettingsUI" parent="." unique_id=1366010198 instance=ExtResource("4_ekv4d")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+
+[node name="PlayerAchievements" type="MarginContainer" parent="." unique_id=400119271]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="PlayerAchievements" unique_id=555423223]
+layout_mode = 2
+
+[node name="CharacterSettings" type="Panel" parent="." unique_id=182821206]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CharacterSettings" unique_id=1285479302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HSplitContainer" parent="CharacterSettings/MarginContainer" unique_id=62681679]
+layout_mode = 2
+split_offsets = PackedInt32Array(158)
+split_offset = 158
+
+[node name="VSplitContainer" type="VSplitContainer" parent="CharacterSettings/MarginContainer/HBoxContainer" unique_id=832259440]
+layout_mode = 2
+
+[node name="CharacterList" parent="CharacterSettings/MarginContainer/HBoxContainer/VSplitContainer" unique_id=1848087007 instance=ExtResource("19_t4lib")]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("20_wif7g")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CharacterSettings/MarginContainer/HBoxContainer" unique_id=954025327]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IngameOptionUI" parent="." unique_id=1200181442 instance=ExtResource("14_2segn")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1

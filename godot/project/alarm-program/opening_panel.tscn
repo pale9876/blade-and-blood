@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b1qndmao4ff7i"]
+
+[ext_resource type="Script" uid="uid://c6urpmh1rjegp" path="res://script/OpeningPanel.cs" id="1_4e6on"]
+
+[sub_resource type="Animation" id="Animation_7ycvg"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_66tet"]
+resource_name = "opening"
+length = 3.0000000000000004
+step = 1.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ycvg"]
+_data = {
+&"RESET": SubResource("Animation_7ycvg"),
+&"opening": SubResource("Animation_66tet")
+}
+
+[node name="OpeningPanel" type="Window" unique_id=124617179]
+transparent_bg = true
+oversampling_override = 1.0
+title = "Opening"
+initial_position = 2
+size = Vector2i(400, 300)
+borderless = true
+transparent = true
+mouse_passthrough = true
+script = ExtResource("1_4e6on")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1505191553]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=867410830]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Opening" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=617102327]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=648084302]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=1524901179]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_7ycvg")
+autoplay = &"opening"

@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="Registry" format=3 uid="uid://bg6nxmqkfmkn8"]
+
+[ext_resource type="Script" uid="uid://dqtv77mng5dyh" path="res://addons/yard/registry.gd" id="1_ri0v6"]
+
+[resource]
+script = ExtResource("1_ri0v6")
+_version = 2
+_scan_rulesets = Array[Dictionary]([{
+&"allowed_file_extensions": Array[String]([".tres"]),
+&"class_restrictions": Array[StringName]([&"\"res://script/resource/passive_information.gd\""]),
+&"recursive_scan": false,
+&"scan_directories": Array[String](["res://skill/passive"]),
+&"scan_regex_exclude": "",
+&"scan_regex_include": ""
+}])
+_uids_to_string_ids = Dictionary[StringName, StringName]({
+&"uid://2j37ys2ie36k": &"undercontrolled",
+&"uid://5udxobqp28ll": &"confession",
+&"uid://6ylihv402nx8": &"sanctuary",
+&"uid://b8rf1p8up0dbc": &"psychopathy",
+&"uid://bad0nyxaxq73": &"shudder",
+&"uid://bduj38qhnq0d7": &"slowburn",
+&"uid://biwt5y8u2wy1c": &"strange_mockery",
+&"uid://bs7cyhihmgpby": &"inferiority_complex",
+&"uid://cajh1nbo2ob3l": &"cannibalism",
+&"uid://cdmc66uhaspbu": &"three_alls_policy",
+&"uid://cfuom58prhylt": &"antithese",
+&"uid://cgjnx1j1vgxuf": &"fleshpound",
+&"uid://clsobwjsuywda": &"mordum",
+&"uid://cs753835ts5uf": &"commemoration",
+&"uid://deu1afwb4ixeh": &"chaosmose",
+&"uid://dkhhme05f15ga": &"come_and_see",
+&"uid://k411lef52eba": &"maggot",
+&"uid://nx55x8yniwiq": &"found_footage",
+&"uid://ptg256owpxwg": &"sabotage"
+})
+_string_ids_to_uids = Dictionary[StringName, StringName]({
+&"antithese": &"uid://cfuom58prhylt",
+&"cannibalism": &"uid://cajh1nbo2ob3l",
+&"chaosmose": &"uid://deu1afwb4ixeh",
+&"come_and_see": &"uid://dkhhme05f15ga",
+&"commemoration": &"uid://cs753835ts5uf",
+&"confession": &"uid://5udxobqp28ll",
+&"fleshpound": &"uid://cgjnx1j1vgxuf",
+&"found_footage": &"uid://nx55x8yniwiq",
+&"inferiority_complex": &"uid://bs7cyhihmgpby",
+&"maggot": &"uid://k411lef52eba",
+&"mordum": &"uid://clsobwjsuywda",
+&"psychopathy": &"uid://b8rf1p8up0dbc",
+&"sabotage": &"uid://ptg256owpxwg",
+&"sanctuary": &"uid://6ylihv402nx8",
+&"shudder": &"uid://bad0nyxaxq73",
+&"slowburn": &"uid://bduj38qhnq0d7",
+&"strange_mockery": &"uid://biwt5y8u2wy1c",
+&"three_alls_policy": &"uid://cdmc66uhaspbu",
+&"undercontrolled": &"uid://2j37ys2ie36k"
+})

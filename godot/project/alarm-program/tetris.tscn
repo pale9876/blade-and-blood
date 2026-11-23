@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://brpw3ynv4xeg7"]
+
+[ext_resource type="Script" uid="uid://xgrb5n3b0rvj" path="res://tetris_monitor.gd" id="1_pjvec"]
+[ext_resource type="PackedScene" uid="uid://dja2l84ag0y1w" path="res://tetris/blank.tscn" id="2_8lihd"]
+[ext_resource type="PackedScene" uid="uid://ctuxfqsbs7rvj" path="res://tetris/fill.tscn" id="3_i0mbr"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_pjvec"]
+resource_name = "tile"
+scenes/1/scene = ExtResource("2_8lihd")
+scenes/2/scene = ExtResource("3_i0mbr")
+
+[sub_resource type="TileSet" id="TileSet_pjvec"]
+sources/0 = SubResource("TileSetScenesCollectionSource_pjvec")
+
+[node name="TetrisMonitor" type="Node2D" unique_id=197908746]
+script = ExtResource("1_pjvec")
+autostart = true
+
+[node name="TickTimer" type="Timer" parent="." unique_id=880548759]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1148334355]
+
+[node name="Tetris" type="TileMapLayer" parent="CanvasLayer" unique_id=1162443074]
+tile_set = SubResource("TileSet_pjvec")

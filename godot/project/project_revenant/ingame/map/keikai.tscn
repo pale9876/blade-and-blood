@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cgjxkmo53vf01"]
+
+[ext_resource type="Script" uid="uid://o348jlsiq2tc" path="res://ingame/map/map_keikai.gd" id="1_3t5c2"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3t5c2"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hwa2f"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jjjrp"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ujkbt"]
+
+[node name="Keikai" type="StaticBody2D" unique_id=1292865989]
+script = ExtResource("1_3t5c2")
+_left = -1
+_right = 1
+_ceil = -1
+_floor = 1
+
+[node name="Ceil" type="CollisionShape2D" parent="." unique_id=1235105182]
+position = Vector2(0, -1)
+shape = SubResource("WorldBoundaryShape2D_3t5c2")
+
+[node name="Left" type="CollisionShape2D" parent="." unique_id=1183346508]
+position = Vector2(-1, 0)
+shape = SubResource("WorldBoundaryShape2D_hwa2f")
+
+[node name="Right" type="CollisionShape2D" parent="." unique_id=10413331]
+position = Vector2(1, 0)
+shape = SubResource("WorldBoundaryShape2D_jjjrp")
+
+[node name="Floor" type="CollisionShape2D" parent="." unique_id=2031275978]
+position = Vector2(0, 1)
+shape = SubResource("WorldBoundaryShape2D_ujkbt")
