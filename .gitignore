@@ -3,3 +3,4 @@
 *.import
 *.exp
 *.lib
+/godot/project/godot-rust/rusteasylib/target
