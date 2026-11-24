@@ -1,4 +1,4 @@
-use std::sync::Mutex;
+use std::{env, sync::Mutex};
 
 use actix_web::{
     App, HttpResponse, HttpServer, Responder,
@@ -8,7 +8,9 @@ use actix_web::{
 };
 
 use mongodb::{
-    Collection, Database, bson::{self, doc, oid::ObjectId}
+    Collection,
+    Database,
+    bson::{self, doc, oid::ObjectId}
 };
 
 use serde::{Deserialize, Serialize};
@@ -17,6 +19,8 @@ use crate::db::connection::get_db;
 use serde_json::{self, json};
 
 use log::info;
+use clap::Parser;
+
 use env_logger;
 
 mod db;
@@ -149,6 +153,16 @@ async fn registry(
         )
 }
 
+#[derive(Parser)]
+struct Args
+{
+    #[arg(short, long, default_value_t=String::from("release"))]
+    mode: String,
+
+    #[arg(short, long, default_value_t=3000)]
+    port: u16,
+}
+
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -158,11 +172,17 @@ async fn main() -> std::io::Result<()> {
         .init();
     
     let today = bson::datetime::DateTime::now();
+    let run_args = Args::parse();
 
-    let current_os = std::env::consts::OS;
-    let post_ip = if current_os == "windows" { "127.0.0.1" } else { "0.0.0.0" };
-    
-    info!("Starting server...");
+    let mode = run_args.mode;
+    let host = if mode == "release" {"0.0.0.0"}
+        else if mode == "test" {"localhost"}
+        else {"127.0.0.1"};
+    let port = run_args.port;
+    let server = (host, port);
+
+    // Alert => 기동 확인용
+    info!("서버 기동중 mode = {mode}, host = {host}, {port}...");
 
     // init db
     let db = get_db().await.expect("Failed to connect to MongoDB");
@@ -174,12 +194,12 @@ async fn main() -> std::io::Result<()> {
 
     if let Ok(list) = db.list_collection_names(doc! {}).await
     {
-        if let state_exist = list.contains(&String::from("state"))
-        {
-            println!("state exist = true");
-        }
+        // if let state_exist = list.contains(&String::from("state"))
+        // {
+        //     println!("state exist = true");
+        // }
     }
-
+    
 
     HttpServer::new(move || {
         App::new()
@@ -191,7 +211,7 @@ async fn main() -> std::io::Result<()> {
             .service(index)
             .service(find_user)
     })
-    .bind((post_ip, PORT))? // 포트번호를 깃허브로 뺄까 싶다.
+    .bind(server)?
     .run()
     .await
 }
