@@ -14,8 +14,8 @@ FROM debian:bullseye-slim
 
 WORKDIR /app
 
-COPY --from=builder /app/target/release/rust-app /app/rust-app
+COPY --from=builder /app/target/release/bnb-server /app/bnb-server
 
 EXPOSE 3000
 
-CMD [ "/app/rust-app" ]
+CMD [ "/app/bnb-server" ]

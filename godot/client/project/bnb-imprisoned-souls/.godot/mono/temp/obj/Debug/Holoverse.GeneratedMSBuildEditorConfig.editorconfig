@@ -1,7 +1,7 @@
 is_global = true
 build_property.GodotDisabledSourceGenerators = 
-build_property.GodotProjectDir = C:\Users\fndlt\OneDrive\문서\GitHub\blade-and-blood\godot\client\project\bnb-imprisoned-souls\
-build_property.GodotProjectDirBase64 = QzpcVXNlcnNcZm5kbHRcT25lRHJpdmVc66y47IScXEdpdEh1YlxibGFkZS1hbmQtYmxvb2RcZ29kb3RcY2xpZW50XHByb2plY3RcYm5iLWltcHJpc29uZWQtc291bHNc
+build_property.GodotProjectDir = C:\Users\ssh\Documents\GitHub\blade-and-blood\godot\client\project\bnb-imprisoned-souls\
+build_property.GodotProjectDirBase64 = QzpcVXNlcnNcc3NoXERvY3VtZW50c1xHaXRIdWJcYmxhZGUtYW5kLWJsb29kXGdvZG90XGNsaWVudFxwcm9qZWN0XGJuYi1pbXByaXNvbmVkLXNvdWxzXA==
 build_property.GodotSourceGenerators = 
 build_property.IsGodotToolsProject = 
 build_property.TargetFramework = net8.0
@@ -16,7 +16,7 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property.EntryPointFilePath = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Holoverse
-build_property.ProjectDir = C:\Users\fndlt\OneDrive\문서\GitHub\blade-and-blood\godot\client\project\bnb-imprisoned-souls\
+build_property.ProjectDir = C:\Users\ssh\Documents\GitHub\blade-and-blood\godot\client\project\bnb-imprisoned-souls\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
