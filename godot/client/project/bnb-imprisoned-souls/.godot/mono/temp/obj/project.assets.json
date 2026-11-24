@@ -232,7 +232,7 @@
   },
   "libraries": {
     "Godot.SourceGenerators/4.7.3-rc": {
-      "sha512": "1INTfUWxyRAhpIg40DuqLIw/5A8m/gPTjR8qtfGuEEQ2rUX1PkofsrqsZt4RQQupb5gtBq2s76mIM7UT6AnaKg==",
+      "sha512": "jGyfeI12BJxN3PG6bo0Kng48Hwjhe0i9MQMMdVnCzT5a+q3Z3OsDojrxUVmAliA9RrIda+P9qBogkR4BhytkHA==",
       "type": "package",
       "path": "godot.sourcegenerators/4.7.3-rc",
       "files": [
@@ -244,7 +244,7 @@
       ]
     },
     "GodotSharp/4.7.3-rc": {
-      "sha512": "XAd83O5rqcxz2YZPTHSa7S+d+fwEy9sj8eTCltr/cT1/UAUaoGbSuwsrCkL6MRbhw+bsqpK7thy0Pp1txe7WpQ==",
+      "sha512": "ehoDHJ3SOsBlTCVsL6nNkPt/yguGYiZ1W8pkj6sZmPp170gjGCJ/LoO2xWR1Dq1a6zyi/XK20fn4rQk2c6+TZA==",
       "type": "package",
       "path": "godotsharp/4.7.3-rc",
       "files": [
@@ -256,7 +256,7 @@
       ]
     },
     "GodotSharpEditor/4.7.3-rc": {
-      "sha512": "noDhb43vv2mjzBoqwZJYh2mlvP1petBFkk0IXqtpBvzZ5v7zd+EJaiNdcGRd+HtCkAB1tJtx4FREzXHHorypDQ==",
+      "sha512": "iVA7+OxPF36uR11IY8x1mspC7u4sOiPZPpsFqiFiW8+R480MJl4rbDbsc6VcUJc4/5m0fqU6hnT46Wu+F07i5A==",
       "type": "package",
       "path": "godotsharpeditor/4.7.3-rc",
       "files": [
@@ -439,19 +439,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ssh\\.nuget\\packages\\": {}
+    "C:\\Users\\fndlt\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ssh\\Documents\\GitHub\\blade-and-blood\\godot\\project\\project_revenant\\Holoverse.csproj",
+      "projectUniqueName": "C:\\Users\\fndlt\\OneDrive\\문서\\GitHub\\blade-and-blood\\godot\\client\\project\\bnb-imprisoned-souls\\Holoverse.csproj",
       "projectName": "Holoverse",
-      "projectPath": "C:\\Users\\ssh\\Documents\\GitHub\\blade-and-blood\\godot\\project\\project_revenant\\Holoverse.csproj",
-      "packagesPath": "C:\\Users\\ssh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ssh\\Documents\\GitHub\\blade-and-blood\\godot\\project\\project_revenant\\.godot\\mono\\temp\\obj\\",
+      "projectPath": "C:\\Users\\fndlt\\OneDrive\\문서\\GitHub\\blade-and-blood\\godot\\client\\project\\bnb-imprisoned-souls\\Holoverse.csproj",
+      "packagesPath": "C:\\Users\\fndlt\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fndlt\\OneDrive\\문서\\GitHub\\blade-and-blood\\godot\\client\\project\\bnb-imprisoned-souls\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ssh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fndlt\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -459,7 +459,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\ssh\\Documents\\GitHub\\godot\\bin\\GodotSharp\\Tools\\nupkgs": {},
+        "C:\\Users\\fndlt\\OneDrive\\문서\\GitHub\\godot\\bin\\GodotSharp\\Tools\\nupkgs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -479,7 +479,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.400"
+      "SdkAnalysisLevel": "11.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -525,15 +525,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.32, 8.0.32]"
+            "version": "[8.0.34, 8.0.34]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.32, 8.0.32]"
+            "version": "[8.0.34, 8.0.34]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.32, 8.0.32]"
+            "version": "[8.0.34, 8.0.34]"
           }
         ],
         "frameworkReferences": {
@@ -541,7 +541,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\11.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ppubFh3KUV0=",
+  "dgSpecHash": "VT8Y1SEsTUk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ssh\\Documents\\GitHub\\blade-and-blood\\godot\\project\\alarm-program\\alarm_program.csproj",
+  "projectFilePath": "C:\\Users\\fndlt\\OneDrive\\문서\\GitHub\\blade-and-blood\\godot\\client\\project\\alarm-program\\alarm_program.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ssh\\.nuget\\packages\\godot.sourcegenerators\\4.7.3-rc\\godot.sourcegenerators.4.7.3-rc.nupkg.sha512",
-    "C:\\Users\\ssh\\.nuget\\packages\\godotsharp\\4.7.3-rc\\godotsharp.4.7.3-rc.nupkg.sha512",
-    "C:\\Users\\ssh\\.nuget\\packages\\godotsharpeditor\\4.7.3-rc\\godotsharpeditor.4.7.3-rc.nupkg.sha512"
+    "C:\\Users\\fndlt\\.nuget\\packages\\godot.sourcegenerators\\4.7.3-rc\\godot.sourcegenerators.4.7.3-rc.nupkg.sha512",
+    "C:\\Users\\fndlt\\.nuget\\packages\\godotsharp\\4.7.3-rc\\godotsharp.4.7.3-rc.nupkg.sha512",
+    "C:\\Users\\fndlt\\.nuget\\packages\\godotsharpeditor\\4.7.3-rc\\godotsharpeditor.4.7.3-rc.nupkg.sha512"
   ],
   "logs": []
 }

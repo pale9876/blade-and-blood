@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ssh\\Documents\\GitHub\\blade-and-blood\\godot\\project\\alarm-program\\alarm_program.csproj": {}
+    "C:\\Users\\fndlt\\OneDrive\\문서\\GitHub\\blade-and-blood\\godot\\client\\project\\alarm-program\\alarm_program.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ssh\\Documents\\GitHub\\blade-and-blood\\godot\\project\\alarm-program\\alarm_program.csproj": {
+    "C:\\Users\\fndlt\\OneDrive\\문서\\GitHub\\blade-and-blood\\godot\\client\\project\\alarm-program\\alarm_program.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ssh\\Documents\\GitHub\\blade-and-blood\\godot\\project\\alarm-program\\alarm_program.csproj",
+        "projectUniqueName": "C:\\Users\\fndlt\\OneDrive\\문서\\GitHub\\blade-and-blood\\godot\\client\\project\\alarm-program\\alarm_program.csproj",
         "projectName": "alarm_program",
-        "projectPath": "C:\\Users\\ssh\\Documents\\GitHub\\blade-and-blood\\godot\\project\\alarm-program\\alarm_program.csproj",
-        "packagesPath": "C:\\Users\\ssh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ssh\\Documents\\GitHub\\blade-and-blood\\godot\\project\\alarm-program\\.godot\\mono\\temp\\obj\\",
+        "projectPath": "C:\\Users\\fndlt\\OneDrive\\문서\\GitHub\\blade-and-blood\\godot\\client\\project\\alarm-program\\alarm_program.csproj",
+        "packagesPath": "C:\\Users\\fndlt\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fndlt\\OneDrive\\문서\\GitHub\\blade-and-blood\\godot\\client\\project\\alarm-program\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ssh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fndlt\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\ssh\\Documents\\GitHub\\godot\\bin\\GodotSharp\\Tools\\nupkgs": {},
+          "C:\\Users\\fndlt\\OneDrive\\문서\\GitHub\\godot\\bin\\GodotSharp\\Tools\\nupkgs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,7 +42,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.400"
+        "SdkAnalysisLevel": "11.0.100"
       },
       "frameworks": {
         "net10.0": {
@@ -82,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\11.0.100/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
