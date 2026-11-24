@@ -11,3 +11,4 @@
 *.uid
 /godot/client/godot_wry/rust/target
 /godot/client/rusteasylib/target
+/target
