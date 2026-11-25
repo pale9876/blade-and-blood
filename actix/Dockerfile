@@ -10,7 +10,7 @@ RUN cargo fetch
 
 RUN cargo build --release
 
-FROM debian:bullseye-slim
+FROM ubuntu:latest
 
 WORKDIR /app
 
