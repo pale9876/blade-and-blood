@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Holoverse")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1500e63eb8a39014d136a7c607d3209df00de17")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+021911a7ce0fc459d4fb35128b0419700e30458c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Holoverse")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Holoverse")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
