@@ -9,7 +9,7 @@ actix-session = {version = "0.11.0", features = ["redis-session"]}
 actix-identity = "0.9.0"
 actix-ws = "0.4.1"
 
-mongodb = "2.5.0" # DB
+mongodb = "2.5.0"
 
 validator = { version = "0.16", features = ["derive"] }
 serde = { version = "1.0", features = ["derive"] }

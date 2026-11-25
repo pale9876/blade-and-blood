@@ -95,7 +95,7 @@ async fn index(
     // state: web::Data<Collection<State>>,
 ) -> impl Responder
 {
-    HttpResponse::Ok().content_type(ContentType::json()).body("Hello Test")
+    HttpResponse::Ok().body("Hello Test")
 }
 
 #[get("/blog/{uid}")]
