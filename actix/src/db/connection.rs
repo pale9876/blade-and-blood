@@ -17,11 +17,10 @@ pub async fn get_db() -> Result<Database, String> {
         .map_err(|_| "MONGO_DB not set in .env".to_string())?;
     
     // Construct the connection string securely
-    let mongo_uri = "mongodb+srv://blade-and-blood:thstjdgh0218@bnb.hvp3nvx.mongodb.net/";
-    // format!(
-    //     "mongodb+srv://{}:{}@{}/?retryWrites=true&w=majority&appName=test",
-    //     user, password, host
-    // );
+    let mongo_uri = format!(
+        "mongodb+srv://{}:{}@{}/?retryWrites=true&w=majority&appName=test",
+        user, password, host
+    );
 
     let client_options = ClientOptions::parse(&mongo_uri)
         .await
