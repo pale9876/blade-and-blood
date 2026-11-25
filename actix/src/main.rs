@@ -92,10 +92,10 @@ struct AppState
 
 #[get("/")]
 async fn index(
-    state: web::Data<Collection<State>>,
+    // state: web::Data<Collection<State>>,
 ) -> impl Responder
 {
-    HttpResponse::Ok().content_type(ContentType::json()).body("Hello")
+    HttpResponse::Ok().content_type(ContentType::json()).body("Hello Test")
 }
 
 #[get("/blog/{uid}")]
@@ -182,7 +182,7 @@ async fn main() -> std::io::Result<()> {
     let server = (host, port);
 
     // Alert => 기동 확인용
-    info!("서버 기동중 mode = {mode}, host = {host}, {port}...");
+    info!("서버 기동중 mode = {mode}, host = {host}, port = {port}...");
 
     // init db
     let db = get_db().await.expect("Failed to connect to MongoDB");
@@ -194,17 +194,13 @@ async fn main() -> std::io::Result<()> {
 
     if let Ok(list) = db.list_collection_names(doc! {}).await
     {
-        // if let state_exist = list.contains(&String::from("state"))
-        // {
-        //     println!("state exist = true");
-        // }
+        
     }
     
 
     HttpServer::new(move || {
         App::new()
             .app_data(db.clone())
-            
             .app_data(user_collection.clone())
             .app_data(state_collection.clone())
             .service(registry)
