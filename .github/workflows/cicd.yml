@@ -13,7 +13,7 @@ jobs:
       - name: Login to docker hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Docker Image
-        run: docker build -t aaasssss231/blade-and-blood .
+        run: docker build -t aaasssss231/blade-and-blood -f ./actix
       - name: Push Image to docker hub
         run: docker push aaasssss231/blade-and-blood:latest
 
