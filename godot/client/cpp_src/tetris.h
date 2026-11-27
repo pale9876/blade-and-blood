@@ -152,7 +152,7 @@ class Tetris : public Node
     }
         
     void set_time_scale(const double time_scale);
-    static Coords coordinated(Met &metris);
+    // static Coords coordinated(Met &metris);
     static Met Mapping(Vector2i coord, Coords _origin, Met state);
 
 };

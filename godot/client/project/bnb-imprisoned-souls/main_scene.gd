@@ -10,7 +10,6 @@ const Option: Script = preload("uid://b6wu325meysae")
 const Title: Script = preload("uid://dtu3imugbu0pm")
 const Hud: Script = preload("uid://dgntyiu05self")
 const DialogUI: Script = preload("uid://borjea45xky04")
-const World = preload("uid://dpn1opeegcme2")
 
 
 # Scenes

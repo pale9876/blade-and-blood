@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+import os
+import sys
+
+# You can find documentation for SCons and SConstruct files at:
+# https://scons.org/documentation.html
+
+env = SConscript("../godot-cpp/SConstruct")
+
+env.Append(CPPPATH=["cpp_src/"])
+
+sources = [
+    Glob("cpp_src/*.cpp"),
+    Glob("cpp_src/cast/*.cpp"),
+    Glob("cpp_src/tetris/*.cpp"),
+    Glob("cpp_src/path/*.cpp")
+]
+
+lib_filename = "{}cppeasylib{}{}".format(
+    env.subst('$SHLIBPREFIX'), env["suffix"], env.subst('$SHLIBSUFFIX')
+)
+
+library = env.SharedLibrary(
+    "bin/cppeasylib/{}".format(lib_filename),
+    source=sources,
+)
+
+Default(library)

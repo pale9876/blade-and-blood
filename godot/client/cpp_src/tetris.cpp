@@ -32,16 +32,16 @@ void Tetris::_bind_methods()
 
 
 
-Coords Tetris::coordinated(Met &metris)
-{
-    for (int y = 0; y < metris.size(); y+=1)
-    {
-        for (int x = 0; x < metris.size(); x+=1)
-        {
+// Coords Tetris::coordinated(Met &metris)
+// {
+//     for (int y = 0; y < metris.size(); y+=1)
+//     {
+//         for (int x = 0; x < metris.size(); x+=1)
+//         {
             
-        }
-    }
-}
+//         }
+//     }
+// }
 
 
 Met Tetris::Mapping(Vector2i coord, Coords _origin, Met state)

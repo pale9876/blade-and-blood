@@ -12,7 +12,7 @@ func _ready() -> void:
 	get_player_ui().show()
 	get_dialog_ui().hide()
 	
-	var player := Global.player
+	var player: Player = Global.player
 	player_ui.get_hp().set_val(player.get_hp_progress())
 	player_ui.get_blood().set_val(player.get_blood())
 
@@ -22,25 +22,25 @@ func _ready() -> void:
 
 
 func player_damaged() -> void:
-	var player := Global.player
+	var player: Player = Global.player
 	var value: float = player.get_hp_progress()
 	get_player_ui().get_hp().set_val(value)
 
 
 func player_healed() -> void:
-	var player := Global.player
+	var player: Player = Global.player
 	var value: float = player.get_hp_progress()
 	get_player_ui().get_hp().set_val(value)
 
 
 func player_use_blood() -> void:
-	var player := Global.player
+	var player: Player = Global.player
 	get_player_ui().get_blood().set_val(player.get_blood())
 
 
 func player_dead() -> void:
 	get_dialog_ui().hide()
-	var tween := fade_out()
+	var tween: Tween = fade_out()
 	await tween.finished
 	get_player_ui().hide()
 

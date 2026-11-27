@@ -15,3 +15,6 @@
 /godot/client/bin
 /build
 /godot/client/project/bnb-imprisoned-souls/.godot
+/godot/.vscode
+/godot/client/.vscode
+godot/client/.sconsign.dblite
