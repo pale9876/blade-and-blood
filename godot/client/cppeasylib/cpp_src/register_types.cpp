@@ -6,8 +6,8 @@
 #include <godot_cpp/godot.hpp>
 
 // #include "test.h"
-#include "block.h"
-#include "tetris.h";
+#include "tetris/block.h"
+#include "tetris/engine.h";
 
 
 using namespace godot;
