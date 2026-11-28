@@ -21,7 +21,7 @@ lib_filename = "{}cppeasylib{}{}".format(
 )
 
 library = env.SharedLibrary(
-    "bin/cppeasylib/{}".format(lib_filename),
+    "../bin/cppeasylib/{}".format(lib_filename),
     source=sources,
 )
 

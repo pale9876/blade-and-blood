@@ -18,3 +18,4 @@
 /godot/.vscode
 /godot/client/.vscode
 godot/client/.sconsign.dblite
+/godot/client/cppeasylib/godot-cpp

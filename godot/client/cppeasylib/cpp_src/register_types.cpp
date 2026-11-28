@@ -18,7 +18,6 @@ void initialize_module(ModuleInitializationLevel _level)
     if (_level != MODULE_INITIALIZATION_LEVEL_SCENE)
         return;
     
-    
     // GDREGISTER_CLASS(ChaosExample);
     GDREGISTER_CLASS(Tetris)
     GDREGISTER_CLASS(Block);

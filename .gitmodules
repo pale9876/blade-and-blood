@@ -1,1 +1,4 @@
 
+[submodule "godot/client/cppeasylib/cpp_src/godot-cpp"]
+	path = godot/client/cppeasylib/godot-cpp
+	url = https://github.com/godotengine/godot-cpp.git
